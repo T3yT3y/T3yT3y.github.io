@@ -17,7 +17,7 @@ if (window.localStorage.getItem('theme-mode') === 'dark') document.documentEleme
 }</style><style>:root {
   --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
   --light-background: url('/img/bk.jpg');
-}</style><meta name="generator" content="Hexo 6.3.0"></head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>[THM]  kenobi</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2023-05-23T12:32:52.857Z" id="date"> 2023-05-23</time></div></span><br><span>Last Update: <div class="control"><time datetime="2023-05-23T15:05:13.691Z" id="updated"> 2023-05-23</time></div></span></div></div><hr><div id="post-content"><p class='item-img' data-src='/pic/173899a86771f6c70b3864a79b6351b633294154.jpg'><img src="/pic/173899a86771f6c70b3864a79b6351b633294154.jpg" alt="173899a86771f6c70b3864a79b6351b633294154"></p>
+}</style><meta name="generator" content="Hexo 6.3.0"></head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>[THM]  kenobi</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2023-05-23T16:29:19.562Z" id="date"> 2023-05-24</time></div></span><br><span>Last Update: <div class="control"><time datetime="2023-05-23T16:34:14.055Z" id="updated"> 2023-05-24</time></div></span></div></div><hr><div id="post-content"><p class='item-img' data-src='/pic/173899a86771f6c70b3864a79b6351b633294154.jpg'><img src="/pic/173899a86771f6c70b3864a79b6351b633294154.jpg" alt="173899a86771f6c70b3864a79b6351b633294154"></p>
 <span id="more"></span>
 
 <h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><ol>
@@ -32,57 +32,57 @@ if (window.localStorage.getItem('theme-mode') === 'dark') document.documentEleme
 <li><p>111端口开放，rpc服务开启。</p>
 </li>
 <li><p>139和445端口开放，Samba服务开启。</p>
-<p class='item-img' data-src='https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/samba.png'><img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/samba.png" alt="samba"></p>
+<p class='item-img' data-src='/pic/assets/samba.png'><img src="/pic/assets/samba.png" alt="samba"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Samba是适用于Linux和Unix的标准Windows互操作性程序套件。它允许最终用户访问和使用公司内部网或互联网上的文件、打印机和其他常见共享资源。它通常被称为网络文件系统。<br>Samba基于服务器消息块（SMB）的通用客户端/服务器协议。SMB仅针对Windows开发，如果没有Samba，其他计算机平台将与Windows机器隔离，即使它们是同一网络的一部分。<br></code></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>因为上面扫描发现存在smb服务，所以使用nmap脚本<code>smb-enum-shares.nse</code>以及<code>smb-enum-users.nse</code>对靶机smb的shares以及users进行列举。</p>
-<p>​		<img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/nmap-script.png" alt="nmap-script"></p>
+<p>​		<img src="/pic/assets/nmap-script.png" alt="nmap-script"></p>
 <p>可以发现\IPC$以及\anonymous都可以任意读写以及访问。</p>
 </li>
 <li><p>所以，我们使用<code>smbclient //ip/anonymous</code>匿名连接靶机smb共享，查看发现存在log.txt文件。（&#x2F;&#x2F;ip&#x2F;IPC$啥也没有）</p>
-<p>​	<img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/information.png" alt="information"></p>
+<p>​	<img src="/pic/assets/information.png" alt="information"></p>
 <p>我们从log.txt中，我们可以发现用户生成了自己的ssh私钥放在<code>/home/kenobi/.ssh/</code>目录下的id_rsa文件中。于是我们考虑能否拿到该秘钥以通过ssh登录靶机。</p>
 </li>
 <li><p>于是，我们得想办法拿到秘钥。之前扫描发现的111端口开放且正在运行rpcbind服务，rpcbind是一个将远程程序调用(RPC– remote procedure call)的程序号转换为通用地址的服务器。当一个RPC 服务启动时，它会告诉 rpcbind 它正在监听的地址以及它准备启用的服务所对应的RPC程序编号。因为扫描发现nfs（network file system）服务被远程启用，我们进一步使用nmap脚本<code>nfs-ls</code>, <code>nfs-statfs</code>, <code>nfs-showmount</code>尝试枚举nfs信息。</p>
-<p class='item-img' data-src='https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/nmap-script-rpc.png'><img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/nmap-script-rpc.png" alt="nmap-script-rpc"></p>
+<p class='item-img' data-src='/pic/assets/nmap-script-rpc.png'><img src="/pic/assets/nmap-script-rpc.png" alt="nmap-script-rpc"></p>
 <p>我们可以发现，靶机将&#x2F;var挂载在nfs上。我们可以尝试将这个目录挂载在我们的攻击机上。</p>
 </li>
 </ol>
 <h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><ol>
 <li><p>但是我们想要的秘钥不在&#x2F;var目录下，我们首先要将其弄到&#x2F;var目录中。前面发现了ProFTPD的版本是1.3.5，我们<code>searchsploit proFTPD 1.3.5</code> 发现其存在文件拷贝漏洞。（其他两个’mod_copy’ RCE利用不成功）。查看File Copy的漏洞利用<code>.txt</code>文件，发现漏洞细节。</p>
-<p class='item-img' data-src='https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/exp-txt.png'><img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/exp-txt.png" alt="exp-txt"></p>
+<p class='item-img' data-src='/pic/assets/exp-txt.png'><img src="/pic/assets/exp-txt.png" alt="exp-txt"></p>
 <p>该版本ProFtpd的mod_copy模块中存在漏洞。mod_copy模块实现了<code>SITE CPFR</code> 和 <code>SITE CPTO</code> 命令(类似于 RNFR 和 RNTO) ，这些命令可以用来将文件&#x2F;目录从服务器上的一个地方复制到另一个地方，而无需将数据传输到客户端并等待返回（无身份验证），该模块包含在 ProFTPD 1.3.x 的 mod_copy.c 文件中，默认情况下不进行编译。也就是说：<strong>任何未经身份验证的客户机都可以利用SITE CPFR 和 SITE CPTO 命令，将文件从FTP服务器的文件系统的任何位置复制到选定的位置。</strong>刚好是我们需要的功能。</p>
 </li>
 <li><p>我们使用nc连接ftp服务器，并利用该漏洞将id_rsa拷贝到&#x2F;var&#x2F;tmp目录下。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">nc -nv 10.10.87.203 21<br>SITE CPFR /home/kenobi/.ssh/id_rsa<br>SITE CPTO /vat/tmp/id_rsa<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>我们将&#x2F;var挂载(mount)到我们机子上</p>
-<p>​	<img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/mount.png" alt="mount"></p>
+<p>​	<img src="/pic/assets/mount.png" alt="mount"></p>
 <p>可以发现，我们已经获得了ssh登录的rsa私钥。</p>
 </li>
 <li><p>我们将id_rsa文件权限改成600，否则无法用于ssh登录。</p>
-<p class='item-img' data-src='https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/ssh-login-id-rsa.png'><img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/ssh-login-id-rsa.png" alt="ssh-login-id-rsa"></p>
+<p class='item-img' data-src='/pic/assets/ssh-login-id-rsa.png'><img src="/pic/assets/ssh-login-id-rsa.png" alt="ssh-login-id-rsa"></p>
 <p>成功登录并可以看到user.txt。</p>
 </li>
 </ol>
 <h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><ol>
 <li><p>先把lse.sh传上去再说。运行。（或者使用<code>find / -perm -u=s -type f 2&gt;/dev/null</code>查找有SUID位的二进制文件）</p>
-<p class='item-img' data-src='https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/suid.png'><img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/suid.png" alt="suid"></p>
+<p class='item-img' data-src='/pic/assets/suid.png'><img src="/pic/assets/suid.png" alt="suid"></p>
 <p>发现有趣的setuid二进制文件：&#x2F;usr&#x2F;bin&#x2F;menu。</p>
 </li>
 <li><p>我们用<code>string</code>检查一下这个二进制文件。（<code>strings </code>是 Linux 上的一个命令，它能在二进制文件上查找人类可读的字符串，我们使用以下命令来查看&#x2F;usr&#x2F;bin&#x2F;menu运行时的信息（因为执行menu命令时有文字回显，我们才使用strings命令））</p>
-<p class='item-img' data-src='https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/suid-check.png'><img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/suid-check.png" alt="suid-check"></p>
+<p class='item-img' data-src='/pic/assets/suid-check.png'><img src="/pic/assets/suid-check.png" alt="suid-check"></p>
 <p>我们发现，其调用<code>curl</code>,<code>uname</code>,<code>ifconfig</code>使用的不是绝对路径（<code>/usr/bin/curl</code>）这种。所以系统在执行时会从$PATH下的路径从前到后寻找这些二进制文件。</p>
 </li>
 <li><p>所以我们可以在$PATH最前面加入目录，并放入我们构造的这些二进制文件，然后menu运行时就会以root权限执行这些文件。因此我们直接构造<code>/bin/bash</code>。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 在/home/kenobi目录下</span><br>kenobi@kenobi:~$ <span class="hljs-built_in">echo</span> /bin/bash &gt; ifconfig<br>kenobi@kenobi:~$ <span class="hljs-built_in">chmod</span> 777 ifconfig<br></code></pre></td></tr></table></figure>
 
-<p>​	<img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/%E6%8F%90%E6%9D%83.png" alt="提权"></p>
+<p>​	<img src="/pic/assets/%E6%8F%90%E6%9D%83.png" alt="提权"></p>
 <p>成功提权。</p>
 </li>
 </ol>
-<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/05/23/jarbas/">[vulnhub]  jarbas Prev →</a></div></div></div></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧</a><a id="to-index" href="#toc-div" title="To Catalog">≡</a><a id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Dr.T3yT3y</a></h1><div id="description"><p>May the flame guide thee</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-number">1.</span> <span class="toc-text">信息收集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">漏洞利用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E6%9D%83"><span class="toc-number">3.</span> <span class="toc-text">提权</span></a></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {code.findCode();
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/05/24/SickOS1.2/">← Next [vulnhub]  SickOS1.2</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/05/24/pe_note/">Privilege Escalation Prev →</a></div></div></div></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧</a><a id="to-index" href="#toc-div" title="To Catalog">≡</a><a id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Dr.T3yT3y</a></h1><div id="description"><p>May the flame guide thee</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-number">1.</span> <span class="toc-text">信息收集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">漏洞利用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E6%9D%83"><span class="toc-number">3.</span> <span class="toc-text">提权</span></a></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {code.findCode();
 document.querySelector('.lg-container')?.remove()
 lightGallery(document.getElementById('post-bg'), {
   plugins: [lgZoom,lgThumbnail],
