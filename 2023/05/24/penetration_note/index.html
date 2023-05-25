@@ -17,7 +17,7 @@ if (window.localStorage.getItem('theme-mode') === 'dark') document.documentEleme
 }</style><style>:root {
   --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
   --light-background: url('/img/bk.jpg');
-}</style><meta name="generator" content="Hexo 6.3.0"></head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Privilege Escalation</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2023-05-23T16:29:19.562Z" id="date"> 2023-05-24</time></div></span><br><span>Last Update: <div class="control"><time datetime="2023-05-23T16:29:23.018Z" id="updated"> 2023-05-24</time></div></span><br><span>Word Count: <div class="control">2.5k</div></span><br><span>Read Time: <div class="control">11 min</div></span></div></div><hr><div id="post-content"><p class='item-img' data-src='/pic/20230422224529.png'><img src="/pic/20230422224529.png" alt="20230422224529"></p>
+}</style><meta name="generator" content="Hexo 6.3.0"></head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Privilege Escalation</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2023-05-23T16:29:19.562Z" id="date"> 2023-05-24</time></div></span><br><span>Last Update: <div class="control"><time datetime="2023-05-25T05:20:45.089Z" id="updated"> 2023-05-25</time></div></span><br><span>Word Count: <div class="control">2.5k</div></span><br><span>Read Time: <div class="control">11 min</div></span></div></div><hr><div id="post-content"><p class='item-img' data-src='/pic/20230422224529.png'><img src="/pic/20230422224529.png" alt="20230422224529"></p>
 <span id="more"></span>
 
 <h1 id="Privilege-Escalation"><a href="#Privilege-Escalation" class="headerlink" title="Privilege Escalation"></a>Privilege Escalation</h1><p>整理自B站up<a target="_blank" rel="noopener" href="https://space.bilibili.com/491748397">红队笔记</a>的提权精讲</p>
@@ -91,23 +91,44 @@ if (window.localStorage.getItem('theme-mode') === 'dark') document.documentEleme
 </ul>
 <p>用户权限：</p>
 <ul>
-<li>sudo -l</li>
-<li>getcap -r &#x2F; 2&gt;&#x2F;dev&#x2F;null</li>
-<li>history 查看历史命令</li>
-<li>cat &#x2F;etc&#x2F;passwd</li>
-<li>cat cat &#x2F;etc&#x2F;shadow</li>
-<li>cat &#x2F;etc&#x2F;crontab</li>
-<li>echo $PATH</li>
-<li>env 查看整体环境</li>
-<li>ps -ef  entire full list</li>
-<li>ps axjf  x-没有连接到终端的进程 j-查看进程树 a-all</li>
-<li>ps aux u-显示启动进程的用户</li>
-<li>top 查看实时更新的进程信息 top -n 1 只刷一次</li>
-<li>netstat -a </li>
-<li>netstat -l 显示正在监听的</li>
-<li>find &#x2F; -type f -perm -04000 2&gt;&#x2F;dev&#x2F;null  或者（find &#x2F; -type f -perm -u&#x3D;s 2&gt;&#x2F;dev&#x2F;null）</li>
-<li>which 查询可执行文件</li>
-<li>cat &#x2F;etc&#x2F;fstab 查看未挂载磁盘（系统运维备份常临时挂载一块磁盘，当使用时再挂载，不使用时就卸掉）</li>
+<li><p>sudo -l</p>
+</li>
+<li><p>getcap -r &#x2F; 2&gt;&#x2F;dev&#x2F;null</p>
+</li>
+<li><p>history 查看历史命令</p>
+</li>
+<li><p>cat &#x2F;etc&#x2F;passwd</p>
+</li>
+<li><p>cat cat &#x2F;etc&#x2F;shadow</p>
+</li>
+<li><p>cat &#x2F;etc&#x2F;crontab</p>
+</li>
+<li><p>echo $PATH</p>
+</li>
+<li><p>env 查看整体环境</p>
+</li>
+<li><p>ps -ef  entire full list</p>
+</li>
+<li><p>ps axjf  x-没有连接到终端的进程 j-查看进程树 a-all</p>
+</li>
+<li><p>ps aux u-显示启动进程的用户</p>
+</li>
+<li><p>top 查看实时更新的进程信息 top -n 1 只刷一次</p>
+</li>
+<li><p>netstat -a </p>
+</li>
+<li><p>netstat -l 显示正在监听的</p>
+</li>
+<li><p>find &#x2F; -type f -perm -04000 2&gt;&#x2F;dev&#x2F;null  或者（find &#x2F; -type f -perm -u&#x3D;s 2&gt;&#x2F;dev&#x2F;null）</p>
+</li>
+<li><p>查找可写文件:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">find / -writable -<span class="hljs-built_in">type</span> f ! -path <span class="hljs-string">&#x27;/proc/*&#x27;</span> 2&gt;/dev/null<br><span class="hljs-comment"># !-取反 /proc下的可写文件一般价值不大且多，我们忽略掉</span><br></code></pre></td></tr></table></figure>
+
+</li>
+<li><p>which 查询可执行文件</p>
+</li>
+<li><p>cat &#x2F;etc&#x2F;fstab 查看未挂载磁盘（系统运维备份常临时挂载一块磁盘，当使用时再挂载，不使用时就卸掉）</p>
+</li>
 </ul>
 <h3 id="自动枚举"><a href="#自动枚举" class="headerlink" title="自动枚举"></a>自动枚举</h3><ul>
 <li><p>大招：linpeas </p>
