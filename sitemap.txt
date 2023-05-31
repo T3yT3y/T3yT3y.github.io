@@ -1,7 +1,7 @@
 https://t3yt3y.github.io/2023/05/31/DC-3/
 https://t3yt3y.github.io/2023/05/28/DC-2/
-https://t3yt3y.github.io/2023/05/23/LampSec:%20CTF7/
 https://t3yt3y.github.io/2023/05/27/DC-1/
+https://t3yt3y.github.io/2023/05/23/LampSec:%20CTF7/
 https://t3yt3y.github.io/2023/05/26/Fowsniff/
 https://t3yt3y.github.io/2023/05/24/penetration_note/
 https://t3yt3y.github.io/2023/05/24/The%20Planets:%20Mercury/
@@ -13,7 +13,7 @@ https://t3yt3y.github.io/2023/05/24/jarbas/
 https://t3yt3y.github.io/about/index.html
 https://t3yt3y.github.io/
 https://t3yt3y.github.io/tags/walkthrough/
-https://t3yt3y.github.io/tags/walkthrough-DC/
+https://t3yt3y.github.io/tags/DC/
 https://t3yt3y.github.io/tags/pe-notes/
 https://t3yt3y.github.io/categories/vulnhub/
 https://t3yt3y.github.io/categories/TryHackMe/
