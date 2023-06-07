@@ -1,3 +1,4 @@
+https://t3yt3y.github.io/2023/06/07/Jack/
 https://t3yt3y.github.io/2023/06/04/Year-of-the-Jellyfish/
 https://t3yt3y.github.io/2023/06/03/DC-6/
 https://t3yt3y.github.io/2023/06/02/DC-5/
@@ -18,6 +19,7 @@ https://t3yt3y.github.io/about/index.html
 https://t3yt3y.github.io/
 https://t3yt3y.github.io/tags/walkthrough/
 https://t3yt3y.github.io/tags/DC/
+https://t3yt3y.github.io/tags/THM/
 https://t3yt3y.github.io/tags/pe-notes/
 https://t3yt3y.github.io/categories/vulnhub/
 https://t3yt3y.github.io/categories/TryHackMe/
