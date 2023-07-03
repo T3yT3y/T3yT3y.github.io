@@ -1,3 +1,4 @@
+https://t3yt3y.github.io/2023/07/03/Precious/
 https://t3yt3y.github.io/2023/06/07/Jack/
 https://t3yt3y.github.io/2023/06/04/Year-of-the-Jellyfish/
 https://t3yt3y.github.io/2023/06/03/DC-6/
@@ -23,4 +24,5 @@ https://t3yt3y.github.io/tags/THM/
 https://t3yt3y.github.io/tags/pe-notes/
 https://t3yt3y.github.io/categories/vulnhub/
 https://t3yt3y.github.io/categories/TryHackMe/
+https://t3yt3y.github.io/categories/HackTheBox/
 https://t3yt3y.github.io/categories/Pentest/
