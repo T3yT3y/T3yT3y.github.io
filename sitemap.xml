@@ -248,14 +248,14 @@
 
   
   <url>
-    <loc>https://t3yt3y.github.io/categories/TryHackMe/</loc>
+    <loc>https://t3yt3y.github.io/categories/vulnhub/</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://t3yt3y.github.io/categories/vulnhub/</loc>
+    <loc>https://t3yt3y.github.io/categories/TryHackMe/</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
