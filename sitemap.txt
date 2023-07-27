@@ -1,3 +1,4 @@
+https://t3yt3y.github.io/2023/07/26/Authority/
 https://t3yt3y.github.io/2023/07/24/Only4You/
 https://t3yt3y.github.io/2023/07/19/Busqueda/
 https://t3yt3y.github.io/2023/07/18/MonitorsTwo/
@@ -27,6 +28,7 @@ https://t3yt3y.github.io/2023/05/24/jarbas/
 https://t3yt3y.github.io/about/index.html
 https://t3yt3y.github.io/
 https://t3yt3y.github.io/tags/walkthrough/
+https://t3yt3y.github.io/tags/Windows/
 https://t3yt3y.github.io/tags/DC/
 https://t3yt3y.github.io/tags/THM/
 https://t3yt3y.github.io/tags/pe-notes/
