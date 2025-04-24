@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://t3yt3y.github.io/2025/04/24/nocturnal/</loc>
+    
+    <lastmod>2025-04-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://t3yt3y.github.io/about/index.html</loc>
     
     <lastmod>2025-04-22</lastmod>
@@ -209,15 +218,6 @@
   </url>
   
   <url>
-    <loc>https://t3yt3y.github.io/2025/04/22/test/</loc>
-    
-    <lastmod>2025-04-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://t3yt3y.github.io/2023/07/27/Authority/</loc>
     
     <lastmod>2025-04-22</lastmod>
@@ -238,7 +238,7 @@
 
   <url>
     <loc>https://t3yt3y.github.io/</loc>
-    <lastmod>2025-04-22</lastmod>
+    <lastmod>2025-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -246,35 +246,35 @@
   
   <url>
     <loc>https://t3yt3y.github.io/tags/walkthrough/</loc>
-    <lastmod>2025-04-22</lastmod>
+    <lastmod>2025-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://t3yt3y.github.io/tags/Windows/</loc>
-    <lastmod>2025-04-22</lastmod>
+    <lastmod>2025-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://t3yt3y.github.io/tags/DC/</loc>
-    <lastmod>2025-04-22</lastmod>
+    <lastmod>2025-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://t3yt3y.github.io/tags/THM/</loc>
-    <lastmod>2025-04-22</lastmod>
+    <lastmod>2025-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://t3yt3y.github.io/tags/pe-notes/</loc>
-    <lastmod>2025-04-22</lastmod>
+    <lastmod>2025-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -283,28 +283,28 @@
   
   <url>
     <loc>https://t3yt3y.github.io/categories/TryHackMe/</loc>
-    <lastmod>2025-04-22</lastmod>
+    <lastmod>2025-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://t3yt3y.github.io/categories/HackTheBox/</loc>
-    <lastmod>2025-04-22</lastmod>
+    <lastmod>2025-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://t3yt3y.github.io/categories/vulnhub/</loc>
-    <lastmod>2025-04-22</lastmod>
+    <lastmod>2025-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://t3yt3y.github.io/categories/Pentest/</loc>
-    <lastmod>2025-04-22</lastmod>
+    <lastmod>2025-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
